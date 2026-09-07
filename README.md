@@ -3,12 +3,23 @@
 **Live dashboard:** https://claude.ai/code/artifact/6bb16501-613e-444e-bffd-e4b7f3aff071
 (bookmark this — it updates whenever a new week is pushed, no need to reopen a session to check his record)
 
-**Standalone dashboard:** `dashboard.html` in this repo. Same page, but with the
-data baked in at generation time instead of fetched live — open it directly in
-a browser (`file://`), no claude.ai account needed. It won't auto-update; run
-`python -m billy_track render-html` and commit the result after each week.
-This is also what you'd host on GitHub Pages if you want a plain shareable URL
-instead of the claude.ai link (e.g. to send to him directly).
+**GitHub Pages dashboard:** `index.html` in this repo, same page with the data
+baked in at generation time instead of fetched live. Once GitHub Pages is
+turned on for this repo (one-time, manual — see below), it's live at:
+
+    https://haroldbergner-lang.github.io/Billy-A-Book/
+
+No claude.ai account needed, plain URL you can send to anyone. It doesn't
+auto-update: run `python -m billy_track render-html` and commit `index.html`
+after each week.
+
+**Turning on GitHub Pages (one-time, do this yourself — I don't have a tool
+that can flip repo settings):**
+1. On GitHub: this repo → **Settings → Pages**
+2. Under "Build and deployment", **Source: Deploy from a branch**
+3. **Branch:** pick the branch this work lives on (currently `claude/hello-vfl6fh`,
+   or `main` once merged) — **Folder: / (root)**
+4. Save. It takes a minute or two to go live at the URL above.
 
 A personal, for-fun tracker for a family friend's BetMGM bets. No money changes
 hands between you and him — this just scores his real bet slips against final
@@ -35,8 +46,10 @@ Edit it if he tells you his actual starting bankroll changed.
    and is rebuilt from `weeks/*.json` any time (e.g. after this session's
    container gets recycled, or in a brand new session).
 5. Claude runs `report --json` and `dump`, and pushes the results into the
-   dashboard artifact's database (see link above) so it's up to date without
-   you needing to open a session just to check his record.
+   dashboard artifact's database (see link above) so the claude.ai dashboard
+   is up to date without you needing to open a session just to check his
+   record. It also runs `render-html` and commits the updated `index.html`,
+   which refreshes the GitHub Pages dashboard once pushed.
 
 Games that haven't finished yet come back as `pending`; run `grade` again
 later (e.g. next weekly batch) to pick up final scores for those.
@@ -58,7 +71,7 @@ python -m billy_track report                     # all-time stats
 python -m billy_track report --week 2026-09-07   # one week's stats
 python -m billy_track report --json              # machine-readable, for pushing to the live dashboard
 python -m billy_track dump                       # full week/bet/leg detail with scores, same purpose
-python -m billy_track render-html                # writes dashboard.html with current data baked in
+python -m billy_track render-html                # writes index.html with current data baked in (for GitHub Pages)
 ```
 
 ## Bet JSON schema

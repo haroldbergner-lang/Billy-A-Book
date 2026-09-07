@@ -119,8 +119,8 @@ def main():
     p_dump = sub.add_parser("dump", help="Print every week/bet/leg with scores, for pushing to the dashboard")
     p_dump.set_defaults(func=cmd_dump)
 
-    p_render = sub.add_parser("render-html", help="Write a standalone dashboard.html with the data baked in")
-    p_render.add_argument("--out", default="dashboard.html", help="Output path (default: dashboard.html)")
+    p_render = sub.add_parser("render-html", help="Write a standalone index.html with the data baked in (for GitHub Pages)")
+    p_render.add_argument("--out", default="index.html", help="Output path (default: index.html)")
     p_render.set_defaults(func=cmd_render_html)
 
     args = parser.parse_args()
