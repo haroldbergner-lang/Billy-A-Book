@@ -307,7 +307,7 @@ function renderScoreboard(summary, startDate){
   recSub.textContent = summary.pending ? `${summary.pending} pending` : "fully settled";
 
   balanceEl.textContent = fmtMoney(balance);
-  balanceEl.className = "score-value " + (balance > startingBalance ? "won" : (balance < startingBalance ? "lost" : ""));
+  balanceEl.className = "score-value " + (balance > 0 ? "won" : (balance < 0 ? "lost" : ""));
   const startWord = startingBalance > 0 ? "started positive" : (startingBalance < 0 ? "started negative" : "started at $0");
   balanceSub.textContent = `${startWord}, at ${fmtMoney(startingBalance)}${startDate ? " on " + fmtDate(startDate) : ""}`;
 
