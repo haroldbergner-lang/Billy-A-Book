@@ -1,0 +1,41 @@
+{
+  "week_label": "2026-09-07",
+  "bets": [
+    {
+      "type": "parlay",
+      "tag": "SGP+",
+      "odds": 477,
+      "stake": 20.00,
+      "payout": 115.56,
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-09-03",
+          "away": "Colorado",
+          "home": "Georgia Tech",
+          "market": "total",
+          "period": "1h",
+          "selection": "under",
+          "line": 25.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-09-03",
+          "away": "Colorado",
+          "home": "Georgia Tech",
+          "market": "moneyline",
+          "selection": "Georgia Tech"
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-09-06",
+          "away": "Wisconsin",
+          "home": "Notre Dame",
+          "market": "spread",
+          "selection": "Notre Dame",
+          "line": -20.5
+        }
+      ]
+    }
+  ]
+}
