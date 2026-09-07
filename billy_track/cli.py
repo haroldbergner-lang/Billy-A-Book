@@ -3,7 +3,7 @@ import json
 import sys
 from pathlib import Path
 
-from . import db, grading, report
+from . import dashboard, db, grading, report
 
 WEEKS_DIR = Path(__file__).resolve().parent.parent / "weeks"
 
@@ -81,6 +81,18 @@ def cmd_dump(args):
     conn.close()
 
 
+def cmd_render_html(args):
+    conn = db.connect()
+    weeks = db.full_dump(conn)
+    summary = report.build_summary(conn)
+    conn.close()
+
+    html = dashboard.render_html(weeks, summary)
+    out_path = Path(args.out)
+    out_path.write_text(html)
+    print(f"Wrote {out_path} ({len(weeks)} week(s) baked in)")
+
+
 def main():
     parser = argparse.ArgumentParser(prog="billy_track")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -106,6 +118,10 @@ def main():
 
     p_dump = sub.add_parser("dump", help="Print every week/bet/leg with scores, for pushing to the dashboard")
     p_dump.set_defaults(func=cmd_dump)
+
+    p_render = sub.add_parser("render-html", help="Write a standalone dashboard.html with the data baked in")
+    p_render.add_argument("--out", default="dashboard.html", help="Output path (default: dashboard.html)")
+    p_render.set_defaults(func=cmd_render_html)
 
     args = parser.parse_args()
     args.func(args)

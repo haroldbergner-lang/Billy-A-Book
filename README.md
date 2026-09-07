@@ -1,7 +1,14 @@
 # Billy-A-Book — bet slip tracker
 
-**Dashboard:** https://claude.ai/code/artifact/6bb16501-613e-444e-bffd-e4b7f3aff071
-(bookmark this — it updates whenever a new week is pushed with `dump`, no need to reopen a session to check his record)
+**Live dashboard:** https://claude.ai/code/artifact/6bb16501-613e-444e-bffd-e4b7f3aff071
+(bookmark this — it updates whenever a new week is pushed, no need to reopen a session to check his record)
+
+**Standalone dashboard:** `dashboard.html` in this repo. Same page, but with the
+data baked in at generation time instead of fetched live — open it directly in
+a browser (`file://`), no claude.ai account needed. It won't auto-update; run
+`python -m billy_track render-html` and commit the result after each week.
+This is also what you'd host on GitHub Pages if you want a plain shareable URL
+instead of the claude.ai link (e.g. to send to him directly).
 
 A personal, for-fun tracker for a family friend's BetMGM bets. No money changes
 hands between you and him — this just scores his real bet slips against final
@@ -44,7 +51,9 @@ python -m billy_track add-week weeks/2026-09-07.json   # add one new week and gr
 python -m billy_track grade                      # re-check any still-pending bets
 python -m billy_track report                     # all-time stats
 python -m billy_track report --week 2026-09-07   # one week's stats
-python -m billy_track report --json              # machine-readable, for pushing to the dashboard
+python -m billy_track report --json              # machine-readable, for pushing to the live dashboard
+python -m billy_track dump                       # full week/bet/leg detail with scores, same purpose
+python -m billy_track render-html                # writes dashboard.html with current data baked in
 ```
 
 ## Bet JSON schema

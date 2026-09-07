@@ -1,0 +1,516 @@
+<title>Cover Sheet</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#EEF0E7;
+  --surface:#FBFBF6;
+  --surface-raised:#FFFFFF;
+  --text:#1A211C;
+  --text-muted:#5B6259;
+  --border:#D7DAC9;
+  --border-strong:#C3C7B3;
+  --accent:#1F4E8C;
+  --accent-ink:#F4F7FB;
+  --won:#22773F;
+  --won-bg:#DFF0E4;
+  --lost:#B23A2E;
+  --lost-bg:#F6E1DE;
+  --push:#93690F;
+  --push-bg:#F1E6C9;
+  --pending:#6B7280;
+  --pending-bg:#E6E7E2;
+  --shadow: 0 1px 2px rgba(26,33,28,0.06), 0 6px 16px -8px rgba(26,33,28,0.18);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#10151A;
+    --surface:#171E24;
+    --surface-raised:#1D262D;
+    --text:#E8EAE2;
+    --text-muted:#9AA39A;
+    --border:#2B343B;
+    --border-strong:#3A454D;
+    --accent:#6FA0DE;
+    --accent-ink:#0C1720;
+    --won:#57B978;
+    --won-bg:#173023;
+    --lost:#E2857A;
+    --lost-bg:#37201D;
+    --push:#D9B24E;
+    --push-bg:#332C15;
+    --pending:#9BA3AC;
+    --pending-bg:#252B31;
+    --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 24px -10px rgba(0,0,0,0.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10151A;
+  --surface:#171E24;
+  --surface-raised:#1D262D;
+  --text:#E8EAE2;
+  --text-muted:#9AA39A;
+  --border:#2B343B;
+  --border-strong:#3A454D;
+  --accent:#6FA0DE;
+  --accent-ink:#0C1720;
+  --won:#57B978;
+  --won-bg:#173023;
+  --lost:#E2857A;
+  --lost-bg:#37201D;
+  --push:#D9B24E;
+  --push-bg:#332C15;
+  --pending:#9BA3AC;
+  --pending-bg:#252B31;
+  --shadow: 0 1px 2px rgba(0,0,0,0.4), 0 10px 24px -10px rgba(0,0,0,0.6);
+}
+
+*{box-sizing:border-box;}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:"IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  line-height:1.5;
+}
+.wrap{
+  max-width:880px;
+  margin:0 auto;
+  padding:28px 20px 64px;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
+.num{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric:tabular-nums; }
+
+h1,h2,h3{ font-family:"Big Shoulders Display", ui-sans-serif, sans-serif; text-wrap:balance; margin:0; }
+
+/* header */
+.eyebrow{
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--text-muted);
+}
+header{ display:flex; flex-direction:column; gap:4px; }
+.masthead{ display:flex; align-items:baseline; justify-content:space-between; gap:16px; flex-wrap:wrap; }
+.masthead h1{ font-size:34px; font-weight:700; }
+.subtitle{ color:var(--text-muted); font-size:14px; max-width:60ch; }
+
+.scoreboard{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+.score-cell{
+  background:var(--surface-raised);
+  padding:18px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+}
+.score-label{ font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); }
+.score-value{ font-family:"Big Shoulders Display", sans-serif; font-size:44px; font-weight:700; line-height:1; font-variant-numeric:tabular-nums; }
+.score-sub{ font-size:12.5px; color:var(--text-muted); }
+.score-value.won{ color:var(--won); }
+.score-value.lost{ color:var(--lost); }
+
+/* stat tiles */
+.tiles{ display:grid; grid-template-columns:repeat(4, 1fr); gap:10px; }
+.tile{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:8px;
+  padding:14px 14px;
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+.tile-label{ font-size:11.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); }
+.tile-value{ font-size:22px; font-weight:600; font-family:"IBM Plex Mono", monospace; font-variant-numeric:tabular-nums; }
+
+/* section shell */
+section{ display:flex; flex-direction:column; gap:12px; }
+.section-title{ font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); }
+
+/* market bars */
+.legend{ display:flex; gap:16px; flex-wrap:wrap; font-size:12.5px; color:var(--text-muted); }
+.legend-item{ display:flex; align-items:center; gap:6px; }
+.legend-dot{ width:9px; height:9px; border-radius:2px; }
+.market-rows{ display:flex; flex-direction:column; gap:10px; }
+.market-row{ display:grid; grid-template-columns:110px 1fr 64px; align-items:center; gap:12px; }
+.market-name{ font-size:13.5px; font-weight:500; }
+.bar-track{ height:16px; border-radius:4px; overflow:hidden; display:flex; background:var(--border); }
+.bar-seg{ height:100%; }
+.market-rate{ text-align:right; font-size:13px; font-weight:600; font-family:"IBM Plex Mono",monospace; }
+
+/* weekly ledger */
+.week-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:10px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+}
+.week-head{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  background:none;
+  border:none;
+  cursor:pointer;
+  font:inherit;
+  color:inherit;
+  text-align:left;
+}
+.week-head:focus-visible{ outline:2px solid var(--accent); outline-offset:-2px; }
+.week-head-left{ display:flex; align-items:center; gap:12px; }
+.week-label{ font-family:"Big Shoulders Display",sans-serif; font-size:20px; font-weight:700; }
+.week-meta{ font-size:12.5px; color:var(--text-muted); }
+.week-profit{ font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:15px; }
+.week-profit.won{ color:var(--won); }
+.week-profit.lost{ color:var(--lost); }
+.chevron{ transition:transform 0.15s ease; color:var(--text-muted); flex:none; }
+.week-card[data-open="true"] .chevron{ transform:rotate(90deg); }
+
+.week-body{ border-top:1px dashed var(--border-strong); padding:4px 16px 14px; display:flex; flex-direction:column; }
+.week-card[data-open="false"] .week-body{ display:none; }
+
+.bet{ padding:12px 0; border-bottom:1px solid var(--border); }
+.bet:last-child{ border-bottom:none; }
+.bet-head{ display:flex; align-items:center; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.bet-title{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+.bet-tag{
+  font-size:10.5px; font-weight:700; letter-spacing:0.04em;
+  border:1px solid var(--border-strong); border-radius:4px; padding:1px 6px;
+  color:var(--text-muted);
+}
+.bet-name{ font-size:14px; font-weight:500; }
+.bet-odds{ font-family:"IBM Plex Mono",monospace; font-size:13px; color:var(--text-muted); }
+.bet-figs{ display:flex; gap:14px; font-size:12.5px; color:var(--text-muted); }
+.bet-figs .num{ color:var(--text); }
+
+.chip{
+  display:inline-flex; align-items:center; gap:4px;
+  font-size:11px; font-weight:600; letter-spacing:0.03em; text-transform:uppercase;
+  padding:2px 8px; border-radius:100px;
+}
+.chip.won{ color:var(--won); background:var(--won-bg); }
+.chip.lost{ color:var(--lost); background:var(--lost-bg); }
+.chip.push{ color:var(--push); background:var(--push-bg); }
+.chip.pending, .chip.unknown{ color:var(--pending); background:var(--pending-bg); }
+
+.legs{ margin-top:8px; padding-left:14px; border-left:2px solid var(--border); display:flex; flex-direction:column; gap:8px; }
+.leg-row{ display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap; }
+.leg-desc{ font-size:13px; }
+.leg-desc .muted{ color:var(--text-muted); }
+.leg-score{ font-size:12px; color:var(--text-muted); font-family:"IBM Plex Mono",monospace; }
+
+.empty-state{
+  border:1px dashed var(--border-strong);
+  border-radius:10px;
+  padding:32px 20px;
+  text-align:center;
+  color:var(--text-muted);
+  font-size:14px;
+}
+
+footer{ font-size:12px; color:var(--text-muted); border-top:1px solid var(--border); padding-top:14px; }
+footer p{ margin:0 0 4px; }
+
+@media (max-width:600px){
+  .tiles{ grid-template-columns:repeat(2,1fr); }
+  .scoreboard{ grid-template-columns:1fr; }
+  .market-row{ grid-template-columns:84px 1fr 50px; }
+}
+</style>
+
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Weekly bet-slip tracking &middot; for fun, no money on it</div>
+    <div class="masthead">
+      <h1>Cover Sheet</h1>
+    </div>
+    <div class="subtitle">His BetMGM slips, transcribed weekly and graded against final scores. Tracks record and hit rate &mdash; not his actual account balance.</div>
+  </header>
+
+  <div class="scoreboard" id="scoreboard">
+    <div class="score-cell">
+      <span class="score-label">All-time record</span>
+      <span class="score-value" id="sb-record">&mdash;</span>
+      <span class="score-sub" id="sb-record-sub">loading&hellip;</span>
+    </div>
+    <div class="score-cell">
+      <span class="score-label">Net result</span>
+      <span class="score-value" id="sb-profit">&mdash;</span>
+      <span class="score-sub" id="sb-profit-sub">from graded bets</span>
+    </div>
+  </div>
+
+  <div class="tiles">
+    <div class="tile"><span class="tile-label">Win rate</span><span class="tile-value num" id="t-winrate">&mdash;</span></div>
+    <div class="tile"><span class="tile-label">ROI</span><span class="tile-value num" id="t-roi">&mdash;</span></div>
+    <div class="tile"><span class="tile-label">Staked</span><span class="tile-value num" id="t-staked">&mdash;</span></div>
+    <div class="tile"><span class="tile-label">Pending</span><span class="tile-value num" id="t-pending">&mdash;</span></div>
+  </div>
+
+  <section>
+    <div class="section-title">Hit rate by market</div>
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:var(--won)"></span>Won</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--lost)"></span>Lost</span>
+      <span class="legend-item"><span class="legend-dot" style="background:var(--push)"></span>Push</span>
+    </div>
+    <div class="market-rows" id="market-rows"></div>
+  </section>
+
+  <section>
+    <div class="section-title">Weekly ledger</div>
+    <div id="weeks-list" style="display:flex; flex-direction:column; gap:12px;"></div>
+  </section>
+
+  <footer>
+    <p>Scores sourced from ESPN's public scoreboard. A parlay is graded lost the moment any one leg loses, same as the sportsbook settles it.</p>
+    <p>Net result assumes stake risked / payout collected as shown on each slip; it is not synced to his live MGM balance.</p>
+  </footer>
+
+</div>
+
+<script>
+const MARKET_LABELS = { moneyline: "Moneyline", spread: "Spread", total: "Total" };
+const RESULT_LABEL = { won: "Won", lost: "Lost", push: "Push", pending: "Pending", unknown: "Unknown" };
+
+function fmtMoney(n){
+  const v = Number(n || 0);
+  const sign = v < 0 ? "-" : "";
+  return sign + "$" + Math.abs(v).toFixed(2);
+}
+function fmtOdds(n){
+  return (n > 0 ? "+" : "") + n;
+}
+function fmtLine(market, selection, line){
+  if (market === "moneyline") return selection;
+  if (market === "total") return (selection === "over" ? "Over" : "Under") + " " + line;
+  return selection + " " + (line > 0 ? "+" + line : line);
+}
+function periodLabel(period){
+  return period === "1h" ? "1st half " : "";
+}
+
+function renderScoreboard(summary){
+  const rec = document.getElementById("sb-record");
+  const recSub = document.getElementById("sb-record-sub");
+  const profitEl = document.getElementById("sb-profit");
+  const profitSub = document.getElementById("sb-profit-sub");
+
+  rec.textContent = `${summary.wins}-${summary.losses}-${summary.pushes}`;
+  rec.className = "score-value " + (summary.wins > summary.losses ? "won" : (summary.losses > summary.wins ? "lost" : ""));
+  recSub.textContent = summary.pending ? `${summary.pending} pending` : "fully settled";
+
+  profitEl.textContent = fmtMoney(summary.profit);
+  profitEl.className = "score-value " + (summary.profit > 0 ? "won" : (summary.profit < 0 ? "lost" : ""));
+  profitSub.textContent = `on $${summary.staked.toFixed(2)} staked`;
+
+  document.getElementById("t-winrate").textContent = summary.win_rate.toFixed(1) + "%";
+  document.getElementById("t-roi").textContent = (summary.roi > 0 ? "+" : "") + summary.roi.toFixed(1) + "%";
+  document.getElementById("t-staked").textContent = "$" + summary.staked.toFixed(2);
+  document.getElementById("t-pending").textContent = summary.pending;
+
+  const rowsEl = document.getElementById("market-rows");
+  rowsEl.innerHTML = "";
+  const markets = Object.keys(summary.by_market || {}).sort();
+  if (markets.length === 0) {
+    rowsEl.innerHTML = '<div class="empty-state">No graded legs yet.</div>';
+  }
+  for (const m of markets) {
+    const c = summary.by_market[m];
+    const total = c.won + c.lost + c.push || 1;
+    const row = document.createElement("div");
+    row.className = "market-row";
+    row.innerHTML = `
+      <span class="market-name">${MARKET_LABELS[m] || m}</span>
+      <span class="bar-track">
+        <span class="bar-seg" style="width:${c.won/total*100}%; background:var(--won)"></span>
+        <span class="bar-seg" style="width:${c.lost/total*100}%; background:var(--lost)"></span>
+        <span class="bar-seg" style="width:${c.push/total*100}%; background:var(--push)"></span>
+      </span>
+      <span class="market-rate">${c.hit_rate}%</span>
+    `;
+    rowsEl.appendChild(row);
+  }
+}
+
+function renderWeeks(weeks){
+  const listEl = document.getElementById("weeks-list");
+  listEl.innerHTML = "";
+  if (!weeks || weeks.length === 0) {
+    listEl.innerHTML = '<div class="empty-state">No weeks logged yet. Once a week is graded, it shows up here.</div>';
+    return;
+  }
+  // most recent first
+  const ordered = [...weeks].sort((a,b) => b.label.localeCompare(a.label));
+  ordered.forEach((week, idx) => {
+    const settled = week.bets.filter(b => ["won","lost","push"].includes(b.result));
+    const wins = settled.filter(b => b.result === "won").length;
+    const losses = settled.filter(b => b.result === "lost").length;
+    const pushes = settled.filter(b => b.result === "push").length;
+    const staked = settled.reduce((s,b) => s + b.stake, 0);
+    const profit = settled.reduce((s,b) => {
+      if (b.result === "won") return s + ((b.payout||0) - b.stake);
+      if (b.result === "lost") return s - b.stake;
+      return s;
+    }, 0);
+
+    const card = document.createElement("div");
+    card.className = "week-card";
+    card.dataset.open = idx === 0 ? "true" : "false";
+
+    const head = document.createElement("button");
+    head.className = "week-head";
+    head.innerHTML = `
+      <span class="week-head-left">
+        <span class="week-label">${week.label}</span>
+        <span class="week-meta">${wins}-${losses}-${pushes} &middot; $${staked.toFixed(2)} staked</span>
+      </span>
+      <span style="display:flex; align-items:center; gap:10px;">
+        <span class="week-profit ${profit>0?'won':(profit<0?'lost':'')}">${fmtMoney(profit)}</span>
+        <svg class="chevron" width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 3l5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+    `;
+    head.addEventListener("click", () => {
+      card.dataset.open = card.dataset.open === "true" ? "false" : "true";
+    });
+
+    const body = document.createElement("div");
+    body.className = "week-body";
+    week.bets.forEach(bet => {
+      const betEl = document.createElement("div");
+      betEl.className = "bet";
+      const legsSummary = bet.type === "parlay"
+        ? `${bet.legs.length}-leg parlay`
+        : fmtLine(bet.legs[0].market, bet.legs[0].selection, bet.legs[0].line);
+      betEl.innerHTML = `
+        <div class="bet-head">
+          <span class="bet-title">
+            ${bet.tag ? `<span class="bet-tag">${bet.tag}</span>` : ""}
+            <span class="bet-name">${legsSummary}</span>
+            <span class="bet-odds num">${fmtOdds(bet.odds)}</span>
+          </span>
+          <span class="bet-figs">
+            <span>stake <span class="num">$${bet.stake.toFixed(2)}</span></span>
+            <span>payout <span class="num">$${(bet.payout||0).toFixed(2)}</span></span>
+            <span class="chip ${bet.result}">${RESULT_LABEL[bet.result] || bet.result}</span>
+          </span>
+        </div>
+        <div class="legs"></div>
+      `;
+      const legsEl = betEl.querySelector(".legs");
+      bet.legs.forEach(leg => {
+        const legEl = document.createElement("div");
+        legEl.className = "leg-row";
+        const scoreLine = (leg.away_score != null && leg.home_score != null)
+          ? `${leg.away} ${leg.away_score} &ndash; ${leg.home} ${leg.home_score}`
+          : `${leg.away} @ ${leg.home}`;
+        legEl.innerHTML = `
+          <span class="leg-desc"><span class="muted">${periodLabel(leg.period)}${MARKET_LABELS[leg.market]||leg.market}:</span> ${fmtLine(leg.market, leg.selection, leg.line)}</span>
+          <span style="display:flex; align-items:center; gap:8px;">
+            <span class="leg-score">${scoreLine}</span>
+            <span class="chip ${leg.result}">${RESULT_LABEL[leg.result] || leg.result}</span>
+          </span>
+        `;
+        legsEl.appendChild(legEl);
+      });
+      body.appendChild(betEl);
+    });
+
+    card.appendChild(head);
+    card.appendChild(body);
+    listEl.appendChild(card);
+  });
+}
+
+function computeSummaryFromWeeks(weeks){
+  // client-side fallback if summary/overall doc isn't present yet
+  let wins=0, losses=0, pushes=0, pending=0, staked=0, profit=0;
+  const byMarket = {};
+  weeks.forEach(week => week.bets.forEach(bet => {
+    if (["won","lost","push"].includes(bet.result)) {
+      staked += bet.stake;
+      if (bet.result === "won") { wins++; profit += (bet.payout||0) - bet.stake; }
+      else if (bet.result === "lost") { losses++; profit -= bet.stake; }
+      else pushes++;
+    } else pending++;
+    bet.legs.forEach(leg => {
+      const m = byMarket[leg.market] || (byMarket[leg.market] = {won:0,lost:0,push:0,other:0});
+      if (["won","lost","push"].includes(leg.result)) m[leg.result]++; else m.other++;
+    });
+  }));
+  Object.values(byMarket).forEach(m => {
+    const decided = m.won + m.lost;
+    m.hit_rate = decided ? Math.round(m.won/decided*1000)/10 : 0;
+  });
+  const decided = wins + losses;
+  return {
+    wins, losses, pushes, pending,
+    staked: Math.round(staked*100)/100,
+    profit: Math.round(profit*100)/100,
+    win_rate: decided ? Math.round(wins/decided*1000)/10 : 0,
+    roi: staked ? Math.round(profit/staked*1000)/10 : 0,
+    by_market: byMarket,
+  };
+}
+
+// Data baked in at generation time (billy_track render-html / dashboard.py) --
+// this is what makes the file work standalone, with no claude.ai dependency.
+window.__BILLY_DATA__ = {"weeks": [{"label": "2026-09-07", "bets": [{"type": "parlay", "tag": "SGP+", "odds": 477, "stake": 20.0, "payout": 115.56, "result": "lost", "legs": [{"sport": "cfb", "event_date": "2026-09-03", "away": "Colorado", "home": "Georgia Tech", "market": "total", "period": "1h", "selection": "under", "line": 25.5, "result": "won", "away_score": 7, "home_score": 10}, {"sport": "cfb", "event_date": "2026-09-03", "away": "Colorado", "home": "Georgia Tech", "market": "moneyline", "period": "full", "selection": "Georgia Tech", "line": null, "result": "lost", "away_score": 14, "home_score": 13}, {"sport": "cfb", "event_date": "2026-09-06", "away": "Wisconsin", "home": "Notre Dame", "market": "spread", "period": "full", "selection": "Notre Dame", "line": -20.5, "result": "won", "away_score": 13, "home_score": 41}]}]}], "summary": {"wins": 0, "losses": 1, "pushes": 0, "pending": 0, "win_rate": 0.0, "staked": 20.0, "profit": -20.0, "roi": -100.0, "by_market": {"total": {"won": 1, "lost": 0, "push": 0, "other": 0, "hit_rate": 100.0}, "moneyline": {"won": 0, "lost": 1, "push": 0, "other": 0, "hit_rate": 0.0}, "spread": {"won": 1, "lost": 0, "push": 0, "other": 0, "hit_rate": 100.0}}, "by_week": [{"label": "2026-09-07", "wins": 0, "losses": 1, "pushes": 0, "pending": 0, "staked": 20.0, "profit": -20.0}]}};
+
+async function init(){
+  let weeksData = (window.__BILLY_DATA__ && window.__BILLY_DATA__.weeks) || [];
+  let summaryDoc = (window.__BILLY_DATA__ && window.__BILLY_DATA__.summary) || null;
+
+  function refresh(){
+    const summary = summaryDoc || computeSummaryFromWeeks(weeksData);
+    renderScoreboard(summary);
+    renderWeeks(weeksData);
+  }
+
+  refresh(); // paint immediately with the baked-in data, no network round trip
+
+  // When opened inside claude.ai as a published Artifact with the db
+  // capability, also subscribe for live updates. Outside that context
+  // (a plain file opened locally, or hosted anywhere else) window.claude
+  // doesn't exist, so the page just shows the baked-in snapshot -- fully
+  // standalone, re-generate it after each weekly update to refresh it.
+  const claudeDb = (window.claude && typeof window.claude.use === "function")
+    ? await window.claude.use("db").catch(() => null)
+    : null;
+  if (!claudeDb) return;
+
+  claudeDb.collection("weeks").orderBy("label").onSnapshot(
+    (snap) => {
+      weeksData = snap.docs.map(d => d.data());
+      refresh();
+    },
+    () => { refresh(); }
+  );
+
+  claudeDb.doc("summary/overall").onSnapshot(
+    (snap) => {
+      summaryDoc = snap.exists ? snap.data() : null;
+      refresh();
+    },
+    () => { refresh(); }
+  );
+}
+
+init();
+</script>
