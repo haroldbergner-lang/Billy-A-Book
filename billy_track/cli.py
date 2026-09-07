@@ -75,6 +75,12 @@ def cmd_report(args):
     conn.close()
 
 
+def cmd_dump(args):
+    conn = db.connect()
+    print(json.dumps(db.full_dump(conn), indent=2))
+    conn.close()
+
+
 def main():
     parser = argparse.ArgumentParser(prog="billy_track")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -97,6 +103,9 @@ def main():
     p_report.add_argument("--week", help="Only report on this week's label")
     p_report.add_argument("--json", action="store_true", help="Print machine-readable JSON instead")
     p_report.set_defaults(func=cmd_report)
+
+    p_dump = sub.add_parser("dump", help="Print every week/bet/leg with scores, for pushing to the dashboard")
+    p_dump.set_defaults(func=cmd_dump)
 
     args = parser.parse_args()
     args.func(args)

@@ -81,3 +81,45 @@ def update_leg_result(conn, leg_id, result, away_score, home_score):
 
 def update_bet_result(conn, bet_id, result):
     conn.execute("UPDATE bets SET result = ? WHERE id = ?", (result, bet_id))
+
+
+def full_dump(conn):
+    """Every week with its bets and legs nested, scores included -- the shape
+    a dashboard needs to render actual results, not just aggregate counts."""
+    weeks = conn.execute("SELECT * FROM weeks ORDER BY id").fetchall()
+    out = []
+    for week in weeks:
+        bets = conn.execute(
+            "SELECT * FROM bets WHERE week_id = ? ORDER BY id", (week["id"],)
+        ).fetchall()
+        bet_list = []
+        for bet in bets:
+            legs = conn.execute(
+                "SELECT * FROM legs WHERE bet_id = ? ORDER BY id", (bet["id"],)
+            ).fetchall()
+            bet_list.append({
+                "type": bet["type"],
+                "tag": bet["tag"],
+                "odds": bet["odds"],
+                "stake": bet["stake"],
+                "payout": bet["payout"],
+                "result": bet["result"],
+                "legs": [
+                    {
+                        "sport": leg["sport"],
+                        "event_date": leg["event_date"],
+                        "away": leg["away"],
+                        "home": leg["home"],
+                        "market": leg["market"],
+                        "period": leg["period"],
+                        "selection": leg["selection"],
+                        "line": leg["line"],
+                        "result": leg["result"],
+                        "away_score": leg["away_score"],
+                        "home_score": leg["home_score"],
+                    }
+                    for leg in legs
+                ],
+            })
+        out.append({"label": week["label"], "bets": bet_list})
+    return out
