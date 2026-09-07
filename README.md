@@ -8,13 +8,17 @@ over time.
 ## How it works
 
 1. Once a week he texts you screenshots of his bet slips.
-2. You (or Claude, reading the screenshots) transcribe each slip into a JSON
-   file matching the schema in `sample_week.json` — one entry per bet, with
-   its legs (game, market, selection, line).
-3. Run `add-week`, which loads the week into the database and immediately
-   tries to grade every leg against final scores pulled from ESPN's public
-   scoreboard API (no API key needed).
-4. Run `report` any time to see his stats.
+2. Open a Claude Code session on this repo/branch (this can be a brand new
+   session each time -- it doesn't need to be the same one as last week) and
+   paste the screenshots in.
+3. Claude transcribes each slip into a JSON file at `weeks/<date>.json`,
+   matching the schema below, and runs `add-week` to grade it against final
+   scores pulled from ESPN's public scoreboard API (no API key needed).
+4. Claude commits `weeks/<date>.json` and pushes it. **This is the important
+   part**: the `weeks/*.json` files are the permanent record. The SQLite
+   database (`data/bets.db`) is a throwaway local cache -- it is gitignored
+   and is rebuilt from `weeks/*.json` any time (e.g. after this session's
+   container gets recycled, or in a brand new session).
 
 Games that haven't finished yet come back as `pending`; run `grade` again
 later (e.g. next weekly batch) to pick up final scores for those.
@@ -23,15 +27,18 @@ later (e.g. next weekly batch) to pick up final scores for those.
 
 ```
 pip install -r requirements.txt
+python -m billy_track rebuild    # (re)builds data/bets.db from weeks/*.json
 ```
 
 ## Usage
 
 ```
-python -m billy_track add-week sample_week.json
-python -m billy_track report
-python -m billy_track grade              # re-check any still-pending bets
-python -m billy_track report --week 2026-09-07
+python -m billy_track rebuild                    # rebuild the DB from every file in weeks/
+python -m billy_track add-week weeks/2026-09-07.json   # add one new week and grade it
+python -m billy_track grade                      # re-check any still-pending bets
+python -m billy_track report                     # all-time stats
+python -m billy_track report --week 2026-09-07   # one week's stats
+python -m billy_track report --json              # machine-readable, for pushing to the dashboard
 ```
 
 ## Bet JSON schema
