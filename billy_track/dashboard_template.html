@@ -133,21 +133,12 @@ header{ display:flex; flex-direction:column; gap:4px; }
 }
 .tile-label{ font-size:11.5px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--text-muted); }
 .tile-value{ font-size:22px; font-weight:600; font-family:"IBM Plex Mono", monospace; font-variant-numeric:tabular-nums; }
+.tile-value.won{ color:var(--won); }
+.tile-value.lost{ color:var(--lost); }
 
 /* section shell */
 section{ display:flex; flex-direction:column; gap:12px; }
 .section-title{ font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:var(--text-muted); }
-
-/* market bars */
-.legend{ display:flex; gap:16px; flex-wrap:wrap; font-size:12.5px; color:var(--text-muted); }
-.legend-item{ display:flex; align-items:center; gap:6px; }
-.legend-dot{ width:9px; height:9px; border-radius:2px; }
-.market-rows{ display:flex; flex-direction:column; gap:10px; }
-.market-row{ display:grid; grid-template-columns:110px 1fr 64px; align-items:center; gap:12px; }
-.market-name{ font-size:13.5px; font-weight:500; }
-.bar-track{ height:16px; border-radius:4px; overflow:hidden; display:flex; background:var(--border); }
-.bar-seg{ height:100%; }
-.market-rate{ text-align:right; font-size:13px; font-weight:600; font-family:"IBM Plex Mono",monospace; }
 
 /* weekly ledger */
 .week-card{
@@ -229,7 +220,6 @@ footer p{ margin:0 0 4px; }
 @media (max-width:600px){
   .tiles{ grid-template-columns:repeat(2,1fr); }
   .scoreboard{ grid-template-columns:1fr; }
-  .market-row{ grid-template-columns:84px 1fr 50px; }
 }
 </style>
 
@@ -240,7 +230,7 @@ footer p{ margin:0 0 4px; }
     <div class="masthead">
       <h1>Cover Sheet</h1>
     </div>
-    <div class="subtitle">His BetMGM slips, transcribed weekly and graded against final scores. Tracks record and hit rate &mdash; not his actual account balance.</div>
+    <div class="subtitle">His BetMGM slips, transcribed weekly and graded against final scores. Balance starts from a set bankroll and tracks each settled bet &mdash; it isn't synced live to his MGM account.</div>
   </header>
 
   <div class="scoreboard" id="scoreboard">
@@ -250,9 +240,9 @@ footer p{ margin:0 0 4px; }
       <span class="score-sub" id="sb-record-sub">loading&hellip;</span>
     </div>
     <div class="score-cell">
-      <span class="score-label">Net result</span>
-      <span class="score-value" id="sb-profit">&mdash;</span>
-      <span class="score-sub" id="sb-profit-sub">from graded bets</span>
+      <span class="score-label">Balance</span>
+      <span class="score-value" id="sb-balance">&mdash;</span>
+      <span class="score-sub" id="sb-balance-sub">loading&hellip;</span>
     </div>
   </div>
 
@@ -260,18 +250,8 @@ footer p{ margin:0 0 4px; }
     <div class="tile"><span class="tile-label">Win rate</span><span class="tile-value num" id="t-winrate">&mdash;</span></div>
     <div class="tile"><span class="tile-label">ROI</span><span class="tile-value num" id="t-roi">&mdash;</span></div>
     <div class="tile"><span class="tile-label">Staked</span><span class="tile-value num" id="t-staked">&mdash;</span></div>
-    <div class="tile"><span class="tile-label">Pending</span><span class="tile-value num" id="t-pending">&mdash;</span></div>
+    <div class="tile"><span class="tile-label">Net</span><span class="tile-value num" id="t-profit">&mdash;</span></div>
   </div>
-
-  <section>
-    <div class="section-title">Hit rate by market</div>
-    <div class="legend">
-      <span class="legend-item"><span class="legend-dot" style="background:var(--won)"></span>Won</span>
-      <span class="legend-item"><span class="legend-dot" style="background:var(--lost)"></span>Lost</span>
-      <span class="legend-item"><span class="legend-dot" style="background:var(--push)"></span>Push</span>
-    </div>
-    <div class="market-rows" id="market-rows"></div>
-  </section>
 
   <section>
     <div class="section-title">Weekly ledger</div>
@@ -280,7 +260,7 @@ footer p{ margin:0 0 4px; }
 
   <footer>
     <p>Scores sourced from ESPN's public scoreboard. A parlay is graded lost the moment any one leg loses, same as the sportsbook settles it.</p>
-    <p>Net result assumes stake risked / payout collected as shown on each slip; it is not synced to his live MGM balance.</p>
+    <p>Balance assumes stake risked / payout collected as shown on each slip, starting from a set bankroll; it is not synced to his live MGM balance.</p>
   </footer>
 
 </div>
@@ -309,44 +289,26 @@ function periodLabel(period){
 function renderScoreboard(summary){
   const rec = document.getElementById("sb-record");
   const recSub = document.getElementById("sb-record-sub");
-  const profitEl = document.getElementById("sb-profit");
-  const profitSub = document.getElementById("sb-profit-sub");
+  const balanceEl = document.getElementById("sb-balance");
+  const balanceSub = document.getElementById("sb-balance-sub");
+
+  const startingBalance = summary.starting_balance || 0;
+  const balance = summary.balance != null ? summary.balance : startingBalance + summary.profit;
 
   rec.textContent = `${summary.wins}-${summary.losses}-${summary.pushes}`;
   rec.className = "score-value " + (summary.wins > summary.losses ? "won" : (summary.losses > summary.wins ? "lost" : ""));
   recSub.textContent = summary.pending ? `${summary.pending} pending` : "fully settled";
 
-  profitEl.textContent = fmtMoney(summary.profit);
-  profitEl.className = "score-value " + (summary.profit > 0 ? "won" : (summary.profit < 0 ? "lost" : ""));
-  profitSub.textContent = `on $${summary.staked.toFixed(2)} staked`;
+  balanceEl.textContent = fmtMoney(balance);
+  balanceEl.className = "score-value " + (balance > startingBalance ? "won" : (balance < startingBalance ? "lost" : ""));
+  balanceSub.textContent = `started at ${fmtMoney(startingBalance)}`;
 
   document.getElementById("t-winrate").textContent = summary.win_rate.toFixed(1) + "%";
   document.getElementById("t-roi").textContent = (summary.roi > 0 ? "+" : "") + summary.roi.toFixed(1) + "%";
   document.getElementById("t-staked").textContent = "$" + summary.staked.toFixed(2);
-  document.getElementById("t-pending").textContent = summary.pending;
-
-  const rowsEl = document.getElementById("market-rows");
-  rowsEl.innerHTML = "";
-  const markets = Object.keys(summary.by_market || {}).sort();
-  if (markets.length === 0) {
-    rowsEl.innerHTML = '<div class="empty-state">No graded legs yet.</div>';
-  }
-  for (const m of markets) {
-    const c = summary.by_market[m];
-    const total = c.won + c.lost + c.push || 1;
-    const row = document.createElement("div");
-    row.className = "market-row";
-    row.innerHTML = `
-      <span class="market-name">${MARKET_LABELS[m] || m}</span>
-      <span class="bar-track">
-        <span class="bar-seg" style="width:${c.won/total*100}%; background:var(--won)"></span>
-        <span class="bar-seg" style="width:${c.lost/total*100}%; background:var(--lost)"></span>
-        <span class="bar-seg" style="width:${c.push/total*100}%; background:var(--push)"></span>
-      </span>
-      <span class="market-rate">${c.hit_rate}%</span>
-    `;
-    rowsEl.appendChild(row);
-  }
+  const profitEl = document.getElementById("t-profit");
+  profitEl.textContent = fmtMoney(summary.profit);
+  profitEl.className = "tile-value num " + (summary.profit > 0 ? "won" : (summary.profit < 0 ? "lost" : ""));
 }
 
 function renderWeeks(weeks){
@@ -459,10 +421,13 @@ function computeSummaryFromWeeks(weeks){
     m.hit_rate = decided ? Math.round(m.won/decided*1000)/10 : 0;
   });
   const decided = wins + losses;
+  const roundedProfit = Math.round(profit*100)/100;
   return {
     wins, losses, pushes, pending,
     staked: Math.round(staked*100)/100,
-    profit: Math.round(profit*100)/100,
+    profit: roundedProfit,
+    starting_balance: 0,
+    balance: roundedProfit,
     win_rate: decided ? Math.round(wins/decided*1000)/10 : 0,
     roi: staked ? Math.round(profit/staked*1000)/10 : 0,
     by_market: byMarket,

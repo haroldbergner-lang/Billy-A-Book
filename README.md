@@ -12,8 +12,13 @@ instead of the claude.ai link (e.g. to send to him directly).
 
 A personal, for-fun tracker for a family friend's BetMGM bets. No money changes
 hands between you and him — this just scores his real bet slips against final
-scores so you can see his record, hit rate by market type, and profit/loss
-over time.
+scores so you can see his record, running balance, and hit rate by market type
+over time. The dashboard shows record/balance/ROI; `report` on the command line
+also breaks it down by market (moneyline/spread/total).
+
+Starting balance lives in `config.json` (`{"starting_balance": 270.74}`) — the
+dashboard's Balance figure is that number plus/minus every settled bet since.
+Edit it if he tells you his actual starting bankroll changed.
 
 ## How it works
 

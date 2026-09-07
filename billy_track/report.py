@@ -1,5 +1,7 @@
 import json
 
+from . import config
+
 
 def _profit(bet):
     if bet["result"] == "won":
@@ -63,6 +65,8 @@ def build_summary(conn, week_label=None):
             "profit": round(sum(_profit(b) for b in wsettled), 2),
         })
 
+    starting_balance = config.load_config()["starting_balance"]
+
     return {
         "wins": wins,
         "losses": losses,
@@ -72,6 +76,8 @@ def build_summary(conn, week_label=None):
         "staked": round(staked, 2),
         "profit": round(profit, 2),
         "roi": round(roi, 1),
+        "starting_balance": round(starting_balance, 2),
+        "balance": round(starting_balance + profit, 2),
         "by_market": by_market,
         "by_week": by_week,
     }
@@ -89,6 +95,7 @@ def print_report(conn, week_label=None, as_json=False):
     print(f"Record: {summary['wins']}-{summary['losses']}-{summary['pushes']}  ({summary['pending']} pending/unresolved)")
     print(f"Win rate: {summary['win_rate']}%")
     print(f"Staked: ${summary['staked']:.2f}   Profit: ${summary['profit']:+.2f}   ROI: {summary['roi']}%")
+    print(f"Balance: ${summary['balance']:.2f}   (started at ${summary['starting_balance']:.2f})")
 
     print("\nBy market (leg-level, includes legs inside parlays):")
     for market, counts in sorted(summary["by_market"].items()):
