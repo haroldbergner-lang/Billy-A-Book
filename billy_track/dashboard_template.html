@@ -237,7 +237,7 @@ footer p{ margin:0 0 4px; }
 
   <div class="scoreboard" id="scoreboard">
     <div class="score-cell">
-      <span class="score-label">All-time record</span>
+      <span class="score-label" id="sb-record-label">Record</span>
       <span class="score-value" id="sb-record">&mdash;</span>
       <span class="score-sub" id="sb-record-sub">loading&hellip;</span>
     </div>
@@ -248,6 +248,7 @@ footer p{ margin:0 0 4px; }
     </div>
   </div>
 
+  <div class="section-title" id="tiles-caption" style="margin-top:2px;">Since &mdash;</div>
   <div class="tiles">
     <div class="tile"><span class="tile-label">Win rate</span><span class="tile-value num" id="t-winrate">&mdash;</span></div>
     <div class="tile"><span class="tile-label">ROI</span><span class="tile-value num" id="t-roi">&mdash;</span></div>
@@ -295,12 +296,18 @@ function fmtDate(label){
 
 function renderScoreboard(summary, startDate){
   const rec = document.getElementById("sb-record");
+  const recLabel = document.getElementById("sb-record-label");
   const recSub = document.getElementById("sb-record-sub");
   const balanceEl = document.getElementById("sb-balance");
   const balanceSub = document.getElementById("sb-balance-sub");
+  const tilesCaption = document.getElementById("tiles-caption");
 
   const startingBalance = summary.starting_balance || 0;
   const balance = summary.balance != null ? summary.balance : startingBalance + summary.profit;
+  const sinceText = startDate ? `since ${fmtDate(startDate)}` : "since tracking began";
+
+  recLabel.textContent = `Record ${sinceText}`;
+  tilesCaption.textContent = `Win rate, ROI, staked & net ${sinceText}`;
 
   rec.textContent = `${summary.wins}-${summary.losses}-${summary.pushes}`;
   rec.className = "score-value " + (summary.wins > summary.losses ? "won" : (summary.losses > summary.wins ? "lost" : ""));
