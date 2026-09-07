@@ -1,5 +1,8 @@
 # Billy-A-Book — bet slip tracker
 
+**Dashboard:** https://claude.ai/code/artifact/6bb16501-613e-444e-bffd-e4b7f3aff071
+(bookmark this — it updates whenever a new week is pushed with `dump`, no need to reopen a session to check his record)
+
 A personal, for-fun tracker for a family friend's BetMGM bets. No money changes
 hands between you and him — this just scores his real bet slips against final
 scores so you can see his record, hit rate by market type, and profit/loss
@@ -19,6 +22,9 @@ over time.
    database (`data/bets.db`) is a throwaway local cache -- it is gitignored
    and is rebuilt from `weeks/*.json` any time (e.g. after this session's
    container gets recycled, or in a brand new session).
+5. Claude runs `report --json` and `dump`, and pushes the results into the
+   dashboard artifact's database (see link above) so it's up to date without
+   you needing to open a session just to check his record.
 
 Games that haven't finished yet come back as `pending`; run `grade` again
 later (e.g. next weekly batch) to pick up final scores for those.
