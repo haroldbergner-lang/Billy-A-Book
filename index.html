@@ -166,6 +166,8 @@ section{ display:flex; flex-direction:column; gap:12px; }
 .week-head-left{ display:flex; align-items:center; gap:12px; }
 .week-label{ font-family:"Big Shoulders Display",sans-serif; font-size:20px; font-weight:700; }
 .week-meta{ font-size:12.5px; color:var(--text-muted); }
+.week-meta .won{ color:var(--won); font-weight:600; }
+.week-meta .lost{ color:var(--lost); font-weight:600; }
 .week-profit{ font-family:"IBM Plex Mono",monospace; font-weight:600; font-size:15px; }
 .week-profit.won{ color:var(--won); }
 .week-profit.lost{ color:var(--lost); }
@@ -285,8 +287,13 @@ function fmtLine(market, selection, line){
 function periodLabel(period){
   return period === "1h" ? "1st half " : "";
 }
+function fmtDate(label){
+  const d = new Date(label + "T12:00:00Z");
+  if (isNaN(d)) return label;
+  return d.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric", timeZone: "UTC" });
+}
 
-function renderScoreboard(summary){
+function renderScoreboard(summary, startDate){
   const rec = document.getElementById("sb-record");
   const recSub = document.getElementById("sb-record-sub");
   const balanceEl = document.getElementById("sb-balance");
@@ -301,7 +308,8 @@ function renderScoreboard(summary){
 
   balanceEl.textContent = fmtMoney(balance);
   balanceEl.className = "score-value " + (balance > startingBalance ? "won" : (balance < startingBalance ? "lost" : ""));
-  balanceSub.textContent = `started at ${fmtMoney(startingBalance)}`;
+  const startWord = startingBalance > 0 ? "started positive" : (startingBalance < 0 ? "started negative" : "started at $0");
+  balanceSub.textContent = `${startWord}, at ${fmtMoney(startingBalance)}${startDate ? " on " + fmtDate(startDate) : ""}`;
 
   document.getElementById("t-winrate").textContent = summary.win_rate.toFixed(1) + "%";
   document.getElementById("t-roi").textContent = (summary.roi > 0 ? "+" : "") + summary.roi.toFixed(1) + "%";
@@ -341,7 +349,7 @@ function renderWeeks(weeks){
     head.innerHTML = `
       <span class="week-head-left">
         <span class="week-label">${week.label}</span>
-        <span class="week-meta">${wins}-${losses}-${pushes} &middot; $${staked.toFixed(2)} staked</span>
+        <span class="week-meta"><span class="${wins>losses?'won':(losses>wins?'lost':'')}">${wins}-${losses}-${pushes}</span> &middot; $${staked.toFixed(2)} staked</span>
       </span>
       <span style="display:flex; align-items:center; gap:10px;">
         <span class="week-profit ${profit>0?'won':(profit<0?'lost':'')}">${fmtMoney(profit)}</span>
@@ -444,7 +452,8 @@ async function init(){
 
   function refresh(){
     const summary = summaryDoc || computeSummaryFromWeeks(weeksData);
-    renderScoreboard(summary);
+    const startDate = weeksData.length ? [...weeksData].sort((a,b) => a.label.localeCompare(b.label))[0].label : null;
+    renderScoreboard(summary, startDate);
     renderWeeks(weeksData);
   }
 
