@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS legs (
     away TEXT NOT NULL,
     home TEXT NOT NULL,
     market TEXT NOT NULL,      -- moneyline | spread | total
-    period TEXT NOT NULL DEFAULT 'full',  -- full | 1h
+    period TEXT NOT NULL DEFAULT 'full',  -- full | 1h | 1q
     selection TEXT NOT NULL,   -- team name, or 'over'/'under'
     line REAL,                 -- spread/total number; NULL for moneyline
     result TEXT NOT NULL DEFAULT 'pending',

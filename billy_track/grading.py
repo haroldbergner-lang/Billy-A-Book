@@ -31,18 +31,19 @@ def _team_matches(team, name):
     return any(name in c.lower() or c.lower() in name for c in candidates if c)
 
 
-def fetch_scoreboard(sport, event_date):
+def fetch_scoreboard(sport, event_date, groups=None):
     path = SPORT_PATHS[sport]
     yyyymmdd = event_date.replace("-", "")
-    url = f"{ESPN_BASE}/{path}/scoreboard?dates={yyyymmdd}"
-    resp = requests.get(url, timeout=15)
+    params = {"dates": yyyymmdd, "limit": 400}
+    if groups:
+        params["groups"] = groups
+    url = f"{ESPN_BASE}/{path}/scoreboard"
+    resp = requests.get(url, params=params, timeout=15)
     resp.raise_for_status()
     return resp.json()
 
 
-def game_result(sport, event_date, away, home):
-    """Find the game and return completed flag + score/first-half-score for each side."""
-    data = fetch_scoreboard(sport, event_date)
+def _find_in_scoreboard(data, away, home):
     for ev in data.get("events", []):
         comp = ev["competitions"][0]
         competitors = comp["competitors"]
@@ -56,15 +57,42 @@ def game_result(sport, event_date, away, home):
         for key, c in (("away", away_c), ("home", home_c)):
             score = int(c["score"]) if c.get("score") not in (None, "") else None
             linescores = c.get("linescores") or []
-            first_half = None
-            if linescores:
-                first_half = sum(
-                    int(float(ls["value"])) for ls in linescores if ls.get("period") in (1, 2)
-                )
-            result[key] = {"score": score, "first_half_score": first_half}
+            by_period = {
+                int(ls["period"]): int(float(ls["value"])) for ls in linescores if ls.get("period")
+            }
+            result[key] = {"score": score, "by_period": by_period}
         return result
+    return None
 
-    raise GameNotFound(f"No {sport} game found for {away} @ {home} on {event_date}")
+
+def game_result(sport, event_date, away, home):
+    """Find the game and return completed flag + score/period-scores for each side.
+    ESPN's default scoreboard response is limited to the top-billed games for the
+    day (no explicit limit), and college football splits FBS/FCS into separate
+    'groups' -- a plain default-params request silently misses plenty of real
+    games, so try the full-limit request first, then fall back to FCS (cfb only)
+    before giving up."""
+    data = fetch_scoreboard(sport, event_date)
+    result = _find_in_scoreboard(data, away, home)
+    if result is None and sport == "cfb":
+        data = fetch_scoreboard(sport, event_date, groups=81)  # FCS
+        result = _find_in_scoreboard(data, away, home)
+    if result is None:
+        raise GameNotFound(f"No {sport} game found for {away} @ {home} on {event_date}")
+    return result
+
+
+def _period_score(side, period):
+    """side: {'score': int|None, 'by_period': {1: x, 2: y, ...}}. period: 'full' | '1h' | '1q'."""
+    if period == "full":
+        return side["score"]
+    if period == "1q":
+        return side["by_period"].get(1)
+    if period == "1h":
+        if not side["by_period"]:
+            return None
+        return side["by_period"].get(1, 0) + side["by_period"].get(2, 0)
+    raise ValueError(f"Unknown period: {period!r}")
 
 
 def _selection_side(leg):
@@ -88,12 +116,12 @@ def grade_leg(leg):
     if not gr["completed"]:
         return "pending", None, None
 
-    score_key = "first_half_score" if leg.get("period", "full") == "1h" else "score"
-    away_score = gr["away"][score_key]
-    home_score = gr["home"][score_key]
+    period = leg.get("period", "full")
+    away_score = _period_score(gr["away"], period)
+    home_score = _period_score(gr["home"], period)
 
     if away_score is None or home_score is None:
-        # e.g. a 1st-half line but linescores weren't reported for this game
+        # e.g. a 1st-half/1st-quarter line but that period wasn't reported for this game
         return "unknown", away_score, home_score
 
     market = leg["market"]

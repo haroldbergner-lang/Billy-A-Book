@@ -93,7 +93,7 @@ python -m billy_track render-html                # writes index.html with curren
           "away": "Colorado",
           "home": "Georgia Tech",
           "market": "moneyline" | "spread" | "total",
-          "period": "full" | "1h",      // omit for full game
+          "period": "full" | "1h" | "1q", // omit for full game
           "selection": "Georgia Tech",  // team name, or "over"/"under" for totals
           "line": -20.5                 // spread/total number; omit for moneyline
         }
