@@ -37,8 +37,13 @@ Edit it if he tells you his actual starting bankroll changed.
 2. Open a Claude Code session on this repo/branch (this can be a brand new
    session each time -- it doesn't need to be the same one as last week) and
    paste the screenshots in.
-3. Claude transcribes each slip into a JSON file at `weeks/<date>.json`,
-   matching the schema below, and runs `add-week` to grade it against final
+3. Claude transcribes every slip from that check-in into ONE JSON file at
+   `weeks/<date>.json` -- `<date>` is the day this gets processed (i.e. today,
+   whenever Claude is doing the grading), not the date(s) the underlying games
+   were played. A single "week" file can and often will contain bets whose
+   games span several different calendar days (he doesn't send screenshots on
+   a strict schedule). Each bet's own `legs` carry the real per-game
+   `event_date` used for grading. Runs `add-week` to grade it against final
    scores pulled from ESPN's public scoreboard API (no API key needed).
 4. Claude commits `weeks/<date>.json` and pushes it. **This is the important
    part**: the `weeks/*.json` files are the permanent record. The SQLite
