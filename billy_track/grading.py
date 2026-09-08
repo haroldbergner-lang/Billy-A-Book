@@ -44,12 +44,20 @@ def fetch_scoreboard(sport, event_date, groups=None):
 
 
 def _find_in_scoreboard(data, away, home):
+    """Match by the API's own homeAway side, then just confirm the name looks
+    right for that side. Matching each query name freely against BOTH
+    competitors (the old approach) breaks whenever one team's name is a
+    substring of the other's -- e.g. "Michigan" is contained in "Western
+    Michigan" -- which can make away_c and home_c resolve to the SAME
+    competitor and silently duplicate one team's score onto both sides."""
     for ev in data.get("events", []):
         comp = ev["competitions"][0]
         competitors = comp["competitors"]
-        away_c = next((c for c in competitors if _team_matches(c["team"], away)), None)
-        home_c = next((c for c in competitors if _team_matches(c["team"], home)), None)
+        away_c = next((c for c in competitors if c.get("homeAway") == "away"), None)
+        home_c = next((c for c in competitors if c.get("homeAway") == "home"), None)
         if away_c is None or home_c is None:
+            continue
+        if not _team_matches(away_c["team"], away) or not _team_matches(home_c["team"], home):
             continue
 
         completed = ev["status"]["type"]["completed"]
@@ -96,10 +104,20 @@ def _period_score(side, period):
 
 
 def _selection_side(leg):
-    sel = leg["selection"].lower()
-    if sel in leg["away"].lower() or leg["away"].lower() in sel:
+    """Same substring pitfall as _team_matches ("Michigan" is contained in
+    "Western Michigan"), so require an exact match first -- true for every
+    leg we transcribe, since the selection is always typed to equal one of
+    the two team names exactly -- before ever falling back to fuzzy matching."""
+    sel = leg["selection"].strip().lower()
+    away = leg["away"].strip().lower()
+    home = leg["home"].strip().lower()
+    if sel == away:
         return "away"
-    if sel in leg["home"].lower() or leg["home"].lower() in sel:
+    if sel == home:
+        return "home"
+    if sel in away.split() or away in sel:
+        return "away"
+    if sel in home.split() or home in sel:
         return "home"
     raise ValueError(f"Selection '{leg['selection']}' doesn't match either team in the leg")
 
