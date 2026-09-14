@@ -1,0 +1,63 @@
+{
+  "week_label": "2026-09-14",
+  "bets": [
+    {
+      "type": "parlay",
+      "odds": 1240,
+      "stake": 10.00,
+      "payout": 134.04,
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-12", "away": "Oklahoma", "home": "Michigan", "market": "total", "selection": "under", "line": 43.5},
+        {"sport": "cfb", "event_date": "2026-09-12", "away": "Alabama", "home": "Kentucky", "market": "spread", "selection": "Alabama", "line": -10},
+        {"sport": "cfb", "event_date": "2026-09-12", "away": "Ohio State", "home": "Texas", "market": "spread", "selection": "Texas", "line": -1.5},
+        {"sport": "cfb", "event_date": "2026-09-12", "away": "UCF", "home": "Pittsburgh", "market": "spread", "selection": "Pittsburgh", "line": -7}
+      ]
+    },
+    {
+      "type": "straight",
+      "odds": 400,
+      "stake": 10.00,
+      "payout": 50.00,
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-12", "away": "UCF", "home": "Pittsburgh", "market": "winning_margin", "selection": "Pittsburgh", "margin_low": 1, "margin_high": 6, "note": "Slip labeled this 'Winning margin (including OT)'."}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 573,
+      "stake": 5.00,
+      "payout": 33.67,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Cleveland Browns", "home": "Jacksonville Jaguars", "market": "spread", "selection": "Jacksonville Jaguars", "line": -9},
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Atlanta Falcons", "home": "Pittsburgh Steelers", "market": "total", "selection": "under", "line": 40.5},
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Buffalo Bills", "home": "Houston Texans", "market": "total", "period": "1h", "selection": "under", "line": 22.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "tag": "SGP+",
+      "odds": 568,
+      "stake": 5.00,
+      "payout": 33.41,
+      "note": "Slip showed this as '1 SGP, 1 Straight': the Commanders/Eagles spread+total were combined into one same-game parlay, plus the Packers spread as a separate straight leg.",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Washington Commanders", "home": "Philadelphia Eagles", "market": "spread", "selection": "Washington Commanders", "line": 5.5},
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Washington Commanders", "home": "Philadelphia Eagles", "market": "total", "selection": "under", "line": 44.5},
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Green Bay Packers", "home": "Minnesota Vikings", "market": "spread", "selection": "Green Bay Packers", "line": 2}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 529,
+      "stake": 5.00,
+      "payout": 31.50,
+      "note": "Slip showed an odds-change warning ('The details of your bet have changed') with an Accept & Place Bet button; confirmed placed.",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Green Bay Packers", "home": "Minnesota Vikings", "market": "total", "selection": "over", "line": 45},
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Tampa Bay Buccaneers", "home": "Cincinnati Bengals", "market": "total", "selection": "over", "line": 60.5},
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "Atlanta Falcons", "home": "Pittsburgh Steelers", "market": "total", "selection": "under", "line": 34.5},
+        {"sport": "nfl", "event_date": "2026-09-13", "away": "New York Jets", "home": "Tennessee Titans", "market": "total", "selection": "under", "line": 33.5}
+      ]
+    }
+  ]
+}

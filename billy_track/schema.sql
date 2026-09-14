@@ -22,10 +22,12 @@ CREATE TABLE IF NOT EXISTS legs (
     event_date TEXT NOT NULL,
     away TEXT NOT NULL,
     home TEXT NOT NULL,
-    market TEXT NOT NULL,      -- moneyline | spread | total
+    market TEXT NOT NULL,      -- moneyline | spread | total | winning_margin
     period TEXT NOT NULL DEFAULT 'full',  -- full | 1h | 1q
     selection TEXT NOT NULL,   -- team name, or 'over'/'under'
-    line REAL,                 -- spread/total number; NULL for moneyline
+    line REAL,                 -- spread/total number; NULL for moneyline/winning_margin
+    margin_low INTEGER,        -- winning_margin range; NULL for other markets
+    margin_high INTEGER,       -- winning_margin range; NULL for other markets
     result TEXT NOT NULL DEFAULT 'pending',
     away_score INTEGER,
     home_score INTEGER

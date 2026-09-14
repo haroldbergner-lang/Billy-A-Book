@@ -39,7 +39,8 @@ def insert_week(conn, label, week_data):
         for leg in bet["legs"]:
             conn.execute(
                 "INSERT INTO legs (bet_id, sport, event_date, away, home, market, "
-                "period, selection, line, result) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')",
+                "period, selection, line, margin_low, margin_high, result) "
+                "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'pending')",
                 (
                     bet_id,
                     leg["sport"],
@@ -50,6 +51,8 @@ def insert_week(conn, label, week_data):
                     leg.get("period", "full"),
                     leg["selection"],
                     leg.get("line"),
+                    leg.get("margin_low"),
+                    leg.get("margin_high"),
                 ),
             )
     conn.commit()
@@ -114,6 +117,8 @@ def full_dump(conn):
                         "period": leg["period"],
                         "selection": leg["selection"],
                         "line": leg["line"],
+                        "margin_low": leg["margin_low"],
+                        "margin_high": leg["margin_high"],
                         "result": leg["result"],
                         "away_score": leg["away_score"],
                         "home_score": leg["home_score"],

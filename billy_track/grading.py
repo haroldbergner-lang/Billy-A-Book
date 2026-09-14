@@ -165,6 +165,15 @@ def grade_leg(leg):
         else:
             result = "won" if (sel == "over") == (total > leg["line"]) else "lost"
 
+    elif market == "winning_margin":
+        # e.g. "Pittsburgh by 1-6": the picked team must win by a margin inside
+        # [margin_low, margin_high] (final score, OT included). Any other outcome
+        # -- losing outright or winning by more/less than the range -- is a loss.
+        side = _selection_side(leg)
+        my_score, opp_score = (away_score, home_score) if side == "away" else (home_score, away_score)
+        margin = my_score - opp_score
+        result = "won" if leg["margin_low"] <= margin <= leg["margin_high"] else "lost"
+
     else:
         raise ValueError(f"Unknown market: {market!r}")
 

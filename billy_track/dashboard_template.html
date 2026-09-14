@@ -269,7 +269,7 @@ footer p{ margin:0 0 4px; }
 </div>
 
 <script>
-const MARKET_LABELS = { moneyline: "Moneyline", spread: "Spread", total: "Total" };
+const MARKET_LABELS = { moneyline: "Moneyline", spread: "Spread", total: "Total", winning_margin: "Winning Margin" };
 const RESULT_LABEL = { won: "Won", lost: "Lost", push: "Push", pending: "Pending", unknown: "Unknown" };
 
 function fmtMoney(n){
@@ -280,9 +280,11 @@ function fmtMoney(n){
 function fmtOdds(n){
   return (n > 0 ? "+" : "") + n;
 }
-function fmtLine(market, selection, line){
+function fmtLine(leg){
+  const { market, selection, line, margin_low, margin_high } = leg;
   if (market === "moneyline") return selection;
   if (market === "total") return (selection === "over" ? "Over" : "Under") + " " + line;
+  if (market === "winning_margin") return selection + " by " + margin_low + "-" + margin_high;
   return selection + " " + (line > 0 ? "+" + line : line);
 }
 function periodLabel(period){
@@ -374,7 +376,7 @@ function renderWeeks(weeks){
       betEl.className = "bet";
       const legsSummary = bet.type === "parlay"
         ? `${bet.legs.length}-leg parlay`
-        : fmtLine(bet.legs[0].market, bet.legs[0].selection, bet.legs[0].line);
+        : fmtLine(bet.legs[0]);
       betEl.innerHTML = `
         <div class="bet-head">
           <span class="bet-title">
@@ -398,7 +400,7 @@ function renderWeeks(weeks){
           ? `${leg.away} ${leg.away_score} &ndash; ${leg.home} ${leg.home_score}`
           : `${leg.away} @ ${leg.home}`;
         legEl.innerHTML = `
-          <span class="leg-desc"><span class="muted">${periodLabel(leg.period)}${MARKET_LABELS[leg.market]||leg.market}:</span> ${fmtLine(leg.market, leg.selection, leg.line)}</span>
+          <span class="leg-desc"><span class="muted">${periodLabel(leg.period)}${MARKET_LABELS[leg.market]||leg.market}:</span> ${fmtLine(leg)}</span>
           <span style="display:flex; align-items:center; gap:8px;">
             <span class="leg-score">${scoreLine}</span>
             <span class="chip ${leg.result}">${RESULT_LABEL[leg.result] || leg.result}</span>
