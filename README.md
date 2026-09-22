@@ -103,7 +103,11 @@ python -m billy_track render-html                # writes index.html with curren
           "line": -20.5,                // spread/total number; omit for moneyline/winning_margin/player_prop
           "margin_low": 1,              // winning_margin only: team must win by this-to-margin_high
           "margin_high": 6,
-          "manual_result": "won"        // player_prop only: "won"/"lost"/"push", looked up by hand from the box score
+          "player": "Bijan Robinson",   // player_prop only: exact ESPN box score display name
+          "stat": "rush_rec_yds",       // player_prop only: rush_yds | rec_yds | rush_rec_yds | receptions | pass_yds | pass_tds | anytime_td
+          "threshold": 125,             // player_prop only: the line, e.g. 125 for "125+"
+          "comparison": "gte",          // player_prop only: gte | gt | lte | lt
+          "manual_result": "won"        // player_prop escape hatch: a researched result ("won"/"lost"/"push") for a prop shape grading.py can't parse yet -- overrides player/stat/threshold/comparison when present
         }
       ]
     }
@@ -124,6 +128,13 @@ name and date. If a game can't be found (bad date, unusual team name) the
 leg is graded `unknown` — check the JSON for typos and re-run `grade`.
 
 Player props (`"market": "player_prop"`, e.g. "Bijan Robinson to record 125+
-rushing and receiving yards") aren't on the team scoreboard, so they're
-looked up by hand from ESPN's box score and the result is recorded directly
-on the leg as `manual_result` instead of being computed from scores.
+rushing and receiving yards") aren't on the team scoreboard, so they're graded
+from ESPN's box score (player-level stats) instead, once the game is
+complete. `player` must match the athlete's ESPN display name exactly (a
+misspelling grades `unknown` rather than silently reading as 0 -- fix the
+name and re-run `grade`). Supported `stat` values sum one or two box score
+columns: `rush_yds`, `rec_yds`, `rush_rec_yds` (rushing + receiving yards),
+`receptions`, `pass_yds`, `pass_tds`, and `anytime_td` (rushing + receiving
+TDs). For a prop shape that doesn't fit one of those (a different stat, an
+"either/or" combo, etc.), skip `stat`/`threshold`/`comparison` and set
+`manual_result` directly after checking the box score by hand.

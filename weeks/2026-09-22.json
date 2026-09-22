@@ -93,13 +93,13 @@
       "odds": 1045,
       "stake": 5.00,
       "payout": 57.25,
-      "note": "Parlay's own odds number wasn't visible in the screenshot (scrolled past); +1045 is derived from the individual leg prices ($5 stake / $57.25 payout). Includes 2 player props, graded by hand from the box score (ESPN's team scoreboard doesn't have player stats): Bijan Robinson had 72 rush + 9 rec = 81 yards (needed 125+, lost); Saquon Barkley had 0 rushing/receiving TDs (lost).",
+      "note": "Parlay's own odds number wasn't visible in the screenshot (scrolled past); +1045 is derived from the individual leg prices ($5 stake / $57.25 payout). Includes 2 player props, graded automatically from the box score.",
       "legs": [
         {"sport": "nfl", "event_date": "2026-09-20", "away": "Minnesota Vikings", "home": "Chicago Bears", "market": "spread", "selection": "Chicago Bears", "line": -3},
-        {"sport": "nfl", "event_date": "2026-09-20", "away": "Carolina Panthers", "home": "Atlanta Falcons", "market": "player_prop", "selection": "Bijan Robinson 125+ rushing and receiving yards", "manual_result": "lost", "note": "72 rush + 9 rec = 81 yds"},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Carolina Panthers", "home": "Atlanta Falcons", "market": "player_prop", "selection": "Bijan Robinson 125+ rushing and receiving yards", "player": "Bijan Robinson", "stat": "rush_rec_yds", "threshold": 125, "comparison": "gte"},
         {"sport": "nfl", "event_date": "2026-09-20", "away": "Pittsburgh Steelers", "home": "New England Patriots", "market": "spread", "selection": "New England Patriots", "line": -3},
-        {"sport": "nfl", "event_date": "2026-09-20", "away": "New Orleans Saints", "home": "Baltimore Ravens", "market": "player_prop", "selection": "Derrick Henry 1+ TDs", "manual_result": "won", "note": "1 rushing TD"},
-        {"sport": "nfl", "event_date": "2026-09-20", "away": "Philadelphia Eagles", "home": "Tennessee Titans", "market": "player_prop", "selection": "Saquon Barkley 1+ TDs", "manual_result": "lost", "note": "0 rushing/receiving TDs"}
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "New Orleans Saints", "home": "Baltimore Ravens", "market": "player_prop", "selection": "Derrick Henry 1+ TDs", "player": "Derrick Henry", "stat": "anytime_td", "threshold": 1, "comparison": "gte"},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Philadelphia Eagles", "home": "Tennessee Titans", "market": "player_prop", "selection": "Saquon Barkley 1+ TDs", "player": "Saquon Barkley", "stat": "anytime_td", "threshold": 1, "comparison": "gte"}
       ]
     },
     {

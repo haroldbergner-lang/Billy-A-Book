@@ -61,7 +61,7 @@ def _find_in_scoreboard(data, away, home):
             continue
 
         completed = ev["status"]["type"]["completed"]
-        result = {"completed": completed}
+        result = {"completed": completed, "id": ev["id"]}
         for key, c in (("away", away_c), ("home", home_c)):
             score = int(c["score"]) if c.get("score") not in (None, "") else None
             linescores = c.get("linescores") or []
@@ -88,6 +88,85 @@ def game_result(sport, event_date, away, home):
     if result is None:
         raise GameNotFound(f"No {sport} game found for {away} @ {home} on {event_date}")
     return result
+
+
+def fetch_summary(sport, event_id):
+    path = SPORT_PATHS[sport]
+    url = f"{ESPN_BASE}/{path}/summary"
+    resp = requests.get(url, params={"event": event_id}, timeout=15)
+    resp.raise_for_status()
+    return resp.json()
+
+
+# Which boxscore stat category/column(s) each supported prop stat pulls from.
+# "anytime_td" and "rush_rec_yds" sum across two categories; the rest read one.
+PROP_STAT_SOURCES = {
+    "rush_yds": [("rushing", "YDS")],
+    "rec_yds": [("receiving", "YDS")],
+    "rush_rec_yds": [("rushing", "YDS"), ("receiving", "YDS")],
+    "receptions": [("receiving", "REC")],
+    "pass_yds": [("passing", "YDS")],
+    "pass_tds": [("passing", "TD")],
+    "anytime_td": [("rushing", "TD"), ("receiving", "TD")],
+}
+
+
+def _player_appears(boxscore, player_name):
+    """Whether the named athlete shows up anywhere in the box score at all --
+    used to catch a typo'd/misspelled name rather than silently grading it as
+    a clean 0 for every stat, which a truly inactive player would also show."""
+    name = player_name.strip().lower()
+    for team in boxscore.get("players", []):
+        for cat in team.get("statistics", []):
+            for ath in cat.get("athletes", []):
+                if ath["athlete"]["displayName"].strip().lower() == name:
+                    return True
+    return False
+
+
+def _player_stat_value(boxscore, player_name, stat):
+    sources = PROP_STAT_SOURCES.get(stat)
+    if sources is None:
+        raise ValueError(f"Unknown player_prop stat: {stat!r}")
+    name = player_name.strip().lower()
+    total = 0.0
+    for team in boxscore.get("players", []):
+        for cat in team.get("statistics", []):
+            for cat_name, label in sources:
+                if cat.get("name") != cat_name:
+                    continue
+                for ath in cat.get("athletes", []):
+                    if ath["athlete"]["displayName"].strip().lower() != name:
+                        continue
+                    row = dict(zip(cat["labels"], ath["stats"]))
+                    val = row.get(label)
+                    if val not in (None, "--"):
+                        total += float(val)
+    return total
+
+
+def _compare_prop(value, comparison, threshold):
+    if comparison == "gte":
+        return "won" if value >= threshold else "lost"
+    if comparison == "gt":
+        return "won" if value > threshold else ("push" if value == threshold else "lost")
+    if comparison == "lte":
+        return "won" if value <= threshold else "lost"
+    if comparison == "lt":
+        return "won" if value < threshold else ("push" if value == threshold else "lost")
+    raise ValueError(f"Unknown player_prop comparison: {comparison!r}")
+
+
+def grade_player_prop(leg, event_id):
+    """leg needs player/stat/threshold/comparison (see PROP_STAT_SOURCES for
+    supported stats). Returns just the result string -- there's no single
+    away/home score to report back for a player prop."""
+    summary = fetch_summary(leg["sport"], event_id)
+    boxscore = summary.get("boxscore", {})
+    if not _player_appears(boxscore, leg["player"]):
+        return "unknown"
+    value = _player_stat_value(boxscore, leg["player"], leg["stat"])
+    return _compare_prop(value, leg["comparison"], leg["threshold"])
 
 
 def _period_score(side, period):
@@ -127,10 +206,17 @@ def grade_leg(leg):
     Returns (result, away_score, home_score) using whichever score (full game or
     first half) the leg's period calls for."""
     if leg["market"] == "player_prop":
-        # ESPN's scoreboard endpoint only has team scores, not player stats, so
-        # these are graded by hand (box score lookup) and the result is carried
-        # in the leg itself rather than recomputed here.
-        return leg["manual_result"], None, None
+        try:
+            gr = game_result(leg["sport"], leg["event_date"], leg["away"], leg["home"])
+        except GameNotFound:
+            return "unknown", None, None
+        if not gr["completed"]:
+            return "pending", None, None
+        if leg.get("manual_result"):
+            # Escape hatch for a prop shape grade_player_prop doesn't support yet
+            # (add a PROP_STAT_SOURCES entry instead, where that's possible).
+            return leg["manual_result"], None, None
+        return grade_player_prop(leg, gr["id"]), None, None
 
     try:
         gr = game_result(leg["sport"], leg["event_date"], leg["away"], leg["home"])

@@ -28,7 +28,11 @@ CREATE TABLE IF NOT EXISTS legs (
     line REAL,                 -- spread/total number; NULL for moneyline/winning_margin/player_prop
     margin_low INTEGER,        -- winning_margin range; NULL for other markets
     margin_high INTEGER,       -- winning_margin range; NULL for other markets
-    manual_result TEXT,        -- player_prop only: researched result ('won'/'lost'/'push'), since ESPN's team scoreboard has no player stats
+    player TEXT,                -- player_prop only: exact ESPN box score display name
+    stat TEXT,                  -- player_prop only: rush_yds | rec_yds | rush_rec_yds | receptions | pass_yds | pass_tds | anytime_td
+    threshold REAL,              -- player_prop only: the line, e.g. 125 for "125+"
+    comparison TEXT,             -- player_prop only: gte | gt | lte | lt
+    manual_result TEXT,        -- player_prop escape hatch: a researched result ('won'/'lost'/'push') for a prop shape grading.py can't parse yet
     result TEXT NOT NULL DEFAULT 'pending',
     away_score INTEGER,
     home_score INTEGER
