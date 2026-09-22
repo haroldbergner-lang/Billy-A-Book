@@ -125,6 +125,32 @@
         {"sport": "nfl", "event_date": "2026-09-20", "away": "Washington Commanders", "home": "Dallas Cowboys", "market": "spread", "selection": "Dallas Cowboys", "line": -9.5},
         {"sport": "nfl", "event_date": "2026-09-20", "away": "Minnesota Vikings", "home": "Chicago Bears", "market": "spread", "selection": "Chicago Bears", "line": -2.5}
       ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1045,
+      "stake": 5.00,
+      "payout": 57.27,
+      "note": "2 more slips from the same Sep 19 CFB slate sent later. Also listed these 4 games as unstaked straights in the bet slip; only the parlay was placed.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Mississippi State", "home": "South Carolina", "market": "spread", "selection": "South Carolina", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "West Virginia", "home": "Virginia", "market": "spread", "selection": "Virginia", "line": -10},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Purdue", "home": "UCLA", "market": "spread", "selection": "UCLA", "line": -14},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "South Dakota", "home": "Boise State", "market": "spread", "selection": "Boise State", "line": -24}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 681,
+      "stake": 10.00,
+      "payout": 78.16,
+      "note": "Also listed these 4 games as unstaked straights in the bet slip; only the parlay was placed.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Kent State", "home": "Ohio State", "market": "spread", "period": "1q", "selection": "Ohio State", "line": -13.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Florida State", "home": "Alabama", "market": "spread", "period": "1q", "selection": "Alabama", "line": -5.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Georgia", "home": "Arkansas", "market": "spread", "period": "1h", "selection": "Georgia", "line": -13.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "NC State", "home": "Vanderbilt", "market": "moneyline", "selection": "Vanderbilt"}
+      ]
     }
   ]
 }
