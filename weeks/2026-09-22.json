@@ -1,0 +1,67 @@
+{
+  "week_label": "2026-09-22",
+  "bets": [
+    {
+      "type": "parlay",
+      "odds": 449,
+      "stake": 10.00,
+      "payout": 54.96,
+      "note": "Slip also listed these 3 games as unstaked straights in the bet slip; only the parlay was placed (total stake/payout matches the parlay alone).",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-18", "away": "Miami", "home": "Wake Forest", "market": "spread", "selection": "Miami", "line": -20.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Arizona State", "home": "Kansas", "market": "total", "period": "1h", "selection": "under", "line": 28.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Florida State", "home": "Alabama", "market": "spread", "selection": "Alabama", "line": -19}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1858,
+      "stake": 5.00,
+      "payout": 97.94,
+      "note": "Slip also listed these 5 games as unstaked straights in the bet slip; only the parlay was placed.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Arizona State", "home": "Kansas", "market": "moneyline", "selection": "Arizona State"},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Charlotte", "home": "Appalachian State", "market": "spread", "selection": "Appalachian State", "line": -17},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Georgia State", "home": "UCF", "market": "spread", "selection": "UCF", "line": -17},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Colorado", "home": "Northwestern", "market": "spread", "selection": "Colorado", "line": 3.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Montana", "home": "Oregon State", "market": "spread", "selection": "Oregon State", "line": -16.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 782,
+      "stake": 5.00,
+      "payout": 44.12,
+      "note": "Slip also listed these 3 games as unstaked straights in the bet slip; only the parlay was placed.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Florida State", "home": "Alabama", "market": "spread", "selection": "Alabama", "line": -19},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Kentucky", "home": "Texas A&M", "market": "total", "period": "1h", "selection": "under", "line": 25.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "NC State", "home": "Vanderbilt", "market": "total", "selection": "under", "line": 45.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 633,
+      "stake": 5.00,
+      "payout": 36.69,
+      "note": "Slip also listed these 3 games as unstaked straights in the bet slip; only the parlay was placed.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Florida State", "home": "Alabama", "market": "spread", "selection": "Alabama", "line": -19},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Florida", "home": "Auburn", "market": "total", "period": "1h", "selection": "under", "line": 24.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "West Virginia", "home": "Virginia", "market": "spread", "period": "1h", "selection": "Virginia", "line": -6.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 451,
+      "stake": 10.00,
+      "payout": 55.19,
+      "note": "Slip also listed these 3 games as unstaked straights in the bet slip; only the parlay was placed.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Florida State", "home": "Alabama", "market": "spread", "period": "1q", "selection": "Alabama", "line": -4.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Troy", "home": "Missouri", "market": "spread", "period": "1h", "selection": "Missouri", "line": -13.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Kentucky", "home": "Texas A&M", "market": "spread", "selection": "Texas A&M", "line": -13.5}
+      ]
+    }
+  ]
+}
