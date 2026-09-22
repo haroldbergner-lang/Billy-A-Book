@@ -97,12 +97,13 @@ python -m billy_track render-html                # writes index.html with curren
           "event_date": "2026-09-03",   // date of the game, YYYY-MM-DD
           "away": "Colorado",
           "home": "Georgia Tech",
-          "market": "moneyline" | "spread" | "total" | "winning_margin",
+          "market": "moneyline" | "spread" | "total" | "winning_margin" | "player_prop",
           "period": "full" | "1h" | "1q", // omit for full game
-          "selection": "Georgia Tech",  // team name, or "over"/"under" for totals
-          "line": -20.5,                // spread/total number; omit for moneyline/winning_margin
+          "selection": "Georgia Tech",  // team name, "over"/"under" for totals, or the prop description ("Yes")
+          "line": -20.5,                // spread/total number; omit for moneyline/winning_margin/player_prop
           "margin_low": 1,              // winning_margin only: team must win by this-to-margin_high
-          "margin_high": 6
+          "margin_high": 6,
+          "manual_result": "won"        // player_prop only: "won"/"lost"/"push", looked up by hand from the box score
         }
       ]
     }
@@ -121,3 +122,8 @@ book would — this is for tracking his record, not settling real payouts.)
 Game results come from ESPN's public scoreboard endpoint, matched by team
 name and date. If a game can't be found (bad date, unusual team name) the
 leg is graded `unknown` — check the JSON for typos and re-run `grade`.
+
+Player props (`"market": "player_prop"`, e.g. "Bijan Robinson to record 125+
+rushing and receiving yards") aren't on the team scoreboard, so they're
+looked up by hand from ESPN's box score and the result is recorded directly
+on the leg as `manual_result` instead of being computed from scores.

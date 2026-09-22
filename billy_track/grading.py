@@ -126,6 +126,12 @@ def grade_leg(leg):
     """leg is a dict with sport/event_date/away/home/market/period/selection/line.
     Returns (result, away_score, home_score) using whichever score (full game or
     first half) the leg's period calls for."""
+    if leg["market"] == "player_prop":
+        # ESPN's scoreboard endpoint only has team scores, not player stats, so
+        # these are graded by hand (box score lookup) and the result is carried
+        # in the leg itself rather than recomputed here.
+        return leg["manual_result"], None, None
+
     try:
         gr = game_result(leg["sport"], leg["event_date"], leg["away"], leg["home"])
     except GameNotFound:

@@ -62,6 +62,69 @@
         {"sport": "cfb", "event_date": "2026-09-19", "away": "Troy", "home": "Missouri", "market": "spread", "period": "1h", "selection": "Missouri", "line": -13.5},
         {"sport": "cfb", "event_date": "2026-09-19", "away": "Kentucky", "home": "Texas A&M", "market": "spread", "selection": "Texas A&M", "line": -13.5}
       ]
+    },
+    {
+      "type": "parlay",
+      "odds": 551,
+      "stake": 10.00,
+      "payout": 65.16,
+      "note": "Slip showed 'Sign up'/'Log in to Bet' (logged out) instead of the usual 'Deposit'/'Place Bet' -- confirmed with Harold this was still placed. Also listed these 3 games as unstaked straights in the bet slip.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "New Mexico", "home": "Oklahoma", "market": "spread", "selection": "New Mexico", "line": 8.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "Montana", "home": "Oregon State", "market": "spread", "period": "1h", "selection": "Oregon State", "line": -9.5},
+        {"sport": "cfb", "event_date": "2026-09-19", "away": "LSU", "home": "Ole Miss", "market": "spread", "selection": "LSU", "line": 11.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 635,
+      "stake": 10.00,
+      "payout": 73.50,
+      "note": "Slip also listed these 4 games as unstaked straights in the bet slip; only the parlay was placed. Parlay's own odds number was cropped off the screenshot; +635 is derived from the individual leg prices ($10 stake / $73.50 payout).",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Cleveland Browns", "home": "Tampa Bay Buccaneers", "market": "spread", "selection": "Tampa Bay Buccaneers", "line": -6.5},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "New Orleans Saints", "home": "Baltimore Ravens", "market": "spread", "selection": "Baltimore Ravens", "line": -6.5},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Philadelphia Eagles", "home": "Tennessee Titans", "market": "spread", "selection": "Philadelphia Eagles", "line": -6},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Miami Dolphins", "home": "San Francisco 49ers", "market": "spread", "period": "1h", "selection": "San Francisco 49ers", "line": -6.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1045,
+      "stake": 5.00,
+      "payout": 57.25,
+      "note": "Parlay's own odds number wasn't visible in the screenshot (scrolled past); +1045 is derived from the individual leg prices ($5 stake / $57.25 payout). Includes 2 player props, graded by hand from the box score (ESPN's team scoreboard doesn't have player stats): Bijan Robinson had 72 rush + 9 rec = 81 yards (needed 125+, lost); Saquon Barkley had 0 rushing/receiving TDs (lost).",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Minnesota Vikings", "home": "Chicago Bears", "market": "spread", "selection": "Chicago Bears", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Carolina Panthers", "home": "Atlanta Falcons", "market": "player_prop", "selection": "Bijan Robinson 125+ rushing and receiving yards", "manual_result": "lost", "note": "72 rush + 9 rec = 81 yds"},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Pittsburgh Steelers", "home": "New England Patriots", "market": "spread", "selection": "New England Patriots", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "New Orleans Saints", "home": "Baltimore Ravens", "market": "player_prop", "selection": "Derrick Henry 1+ TDs", "manual_result": "won", "note": "1 rushing TD"},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Philadelphia Eagles", "home": "Tennessee Titans", "market": "player_prop", "selection": "Saquon Barkley 1+ TDs", "manual_result": "lost", "note": "0 rushing/receiving TDs"}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 2986,
+      "stake": 5.00,
+      "payout": 154.34,
+      "note": "Slip also listed these 4 games as unstaked straights in the bet slip; only the parlay was placed.",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "New Orleans Saints", "home": "Baltimore Ravens", "market": "spread", "period": "1q", "selection": "Baltimore Ravens", "line": -5.5},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Pittsburgh Steelers", "home": "New England Patriots", "market": "spread", "period": "1q", "selection": "New England Patriots", "line": -2.5},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Washington Commanders", "home": "Dallas Cowboys", "market": "spread", "selection": "Dallas Cowboys", "line": -9.5},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Philadelphia Eagles", "home": "Tennessee Titans", "market": "total", "selection": "under", "line": 39.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 504,
+      "stake": 5.00,
+      "payout": 30.24,
+      "note": "Slip showed an odds-change warning ('The details of your bet have changed') with an 'Accept & Place Bet' button; confirmed placed.",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Washington Commanders", "home": "Dallas Cowboys", "market": "spread", "selection": "Dallas Cowboys", "line": -9.5},
+        {"sport": "nfl", "event_date": "2026-09-20", "away": "Minnesota Vikings", "home": "Chicago Bears", "market": "spread", "selection": "Chicago Bears", "line": -2.5}
+      ]
     }
   ]
 }

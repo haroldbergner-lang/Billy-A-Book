@@ -22,12 +22,13 @@ CREATE TABLE IF NOT EXISTS legs (
     event_date TEXT NOT NULL,
     away TEXT NOT NULL,
     home TEXT NOT NULL,
-    market TEXT NOT NULL,      -- moneyline | spread | total | winning_margin
+    market TEXT NOT NULL,      -- moneyline | spread | total | winning_margin | player_prop
     period TEXT NOT NULL DEFAULT 'full',  -- full | 1h | 1q
-    selection TEXT NOT NULL,   -- team name, or 'over'/'under'
-    line REAL,                 -- spread/total number; NULL for moneyline/winning_margin
+    selection TEXT NOT NULL,   -- team name, prop description, or 'over'/'under'
+    line REAL,                 -- spread/total number; NULL for moneyline/winning_margin/player_prop
     margin_low INTEGER,        -- winning_margin range; NULL for other markets
     margin_high INTEGER,       -- winning_margin range; NULL for other markets
+    manual_result TEXT,        -- player_prop only: researched result ('won'/'lost'/'push'), since ESPN's team scoreboard has no player stats
     result TEXT NOT NULL DEFAULT 'pending',
     away_score INTEGER,
     home_score INTEGER
