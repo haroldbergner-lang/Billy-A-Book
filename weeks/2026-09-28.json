@@ -1,0 +1,296 @@
+{
+  "week_label": "2026-09-28",
+  "bets": [
+    {
+      "type": "parlay",
+      "odds": 1443,
+      "stake": 10.00,
+      "payout": 154.27,
+      "note": "Parlay header scrolled off; 5 legs inferred from the 5 listed straights, whose combined odds reproduce the $154.27 payout exactly.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "South Carolina", "home": "Alabama", "market": "spread", "period": "1h", "selection": "Alabama", "line": -6.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Oklahoma", "home": "Georgia", "market": "spread", "selection": "Georgia", "line": -13.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Texas A&M", "home": "LSU", "market": "spread", "selection": "LSU", "line": -9},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Ole Miss", "home": "Florida", "market": "spread", "period": "1h", "selection": "Florida", "line": -2.5},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "moneyline", "selection": "Buffalo Bills"}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1142,
+      "stake": 10.00,
+      "payout": 124.21,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "moneyline", "selection": "Buffalo Bills"},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Virginia Tech", "home": "Boston College", "market": "total", "selection": "under", "line": 41.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Texas", "home": "Tennessee", "market": "total", "period": "1h", "selection": "over", "line": 27.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Oklahoma", "home": "Georgia", "market": "spread", "selection": "Georgia", "line": -13.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1291,
+      "stake": 5.00,
+      "payout": 69.58,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-24", "away": "Atlanta Falcons", "home": "Green Bay Packers", "market": "spread", "selection": "Atlanta Falcons", "line": 4.5},
+        {"sport": "cfb", "event_date": "2026-09-25", "away": "Northwestern", "home": "Indiana", "market": "spread", "period": "1h", "selection": "Indiana", "line": -12.5},
+        {"sport": "cfb", "event_date": "2026-09-25", "away": "Navy", "home": "UAB", "market": "spread", "selection": "Navy", "line": -6.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Iowa", "home": "Michigan", "market": "spread", "selection": "Iowa", "line": 5.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 997,
+      "stake": 5.00,
+      "payout": 54.86,
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-25", "away": "Clemson", "home": "California", "market": "total", "period": "1h", "selection": "under", "line": 25.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Texas A&M", "home": "LSU", "market": "spread", "selection": "LSU", "line": -7},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Texas", "home": "Tennessee", "market": "spread", "period": "1h", "selection": "Tennessee", "line": 3.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Colorado", "home": "Baylor", "market": "spread", "selection": "Baylor", "line": -9.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1223,
+      "stake": 5.00,
+      "payout": 66.19,
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-25", "away": "Clemson", "home": "California", "market": "spread", "selection": "Clemson", "line": -2.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "South Alabama", "home": "Kentucky", "market": "spread", "period": "1h", "selection": "South Alabama", "line": 11.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Oklahoma State", "home": "West Virginia", "market": "spread", "selection": "West Virginia", "line": -2},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Oregon", "home": "USC", "market": "spread", "period": "1h", "selection": "USC", "line": 1.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1186,
+      "stake": 5.00,
+      "payout": 64.34,
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Utah", "home": "Iowa State", "market": "spread", "period": "1h", "selection": "Iowa State", "line": 5.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Missouri", "home": "Mississippi State", "market": "spread", "selection": "Mississippi State", "line": -5.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Iowa", "home": "Michigan", "market": "spread", "period": "1h", "selection": "Iowa", "line": 3.5},
+        {"sport": "cfb", "event_date": "2026-09-25", "away": "Northwestern", "home": "Indiana", "market": "spread", "period": "1q", "selection": "Indiana", "line": -6.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 751,
+      "stake": 10.00,
+      "payout": 85.12,
+      "note": "Parlay header scrolled off; 4 legs inferred from the 4 listed straights, whose combined odds reproduce the $85.12 payout exactly.",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "spread", "selection": "Buffalo Bills", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Utah", "home": "Iowa State", "market": "spread", "selection": "Iowa State", "line": 7.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Missouri", "home": "Mississippi State", "market": "spread", "selection": "Mississippi State", "line": -4},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Oregon", "home": "USC", "market": "spread", "selection": "Oregon", "line": -3}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 510,
+      "stake": 10.00,
+      "payout": 61.09,
+      "note": "Iowa State leg placed live (in-game line).",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "spread", "selection": "Buffalo Bills", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Texas A&M", "home": "LSU", "market": "spread", "selection": "LSU", "line": -7},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "spread", "selection": "San Francisco 49ers", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Utah", "home": "Iowa State", "market": "spread", "selection": "Iowa State", "line": 11.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1052,
+      "stake": 5.00,
+      "payout": 57.58,
+      "note": "Parlay header scrolled off; 5 legs inferred from the 5 listed straights, whose combined odds reproduce the $57.58 payout exactly. Iowa State, Ole Miss and Iowa/Michigan legs placed live; odds had just moved ('Accept & Place Bet').",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "spread", "selection": "Buffalo Bills", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "spread", "selection": "San Francisco 49ers", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Utah", "home": "Iowa State", "market": "spread", "selection": "Iowa State", "line": 15.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Ole Miss", "home": "Florida", "market": "spread", "selection": "Ole Miss", "line": 8.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Iowa", "home": "Michigan", "market": "total", "selection": "over", "line": 29.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1758,
+      "stake": 15.00,
+      "payout": 278.75,
+      "note": "Parlay header scrolled off; 6 legs inferred from the 6 listed straights, whose combined odds reproduce the $278.75 payout exactly.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Texas", "home": "Tennessee", "market": "spread", "selection": "Tennessee", "line": 4},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Cincinnati Bengals", "home": "Pittsburgh Steelers", "market": "spread", "selection": "Cincinnati Bengals", "line": -2.5},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "New York Jets", "home": "Detroit Lions", "market": "spread", "selection": "Detroit Lions", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "spread", "selection": "San Francisco 49ers", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Baltimore Ravens", "home": "Dallas Cowboys", "market": "moneyline", "selection": "Baltimore Ravens"},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Virginia Tech", "home": "Boston College", "market": "total", "selection": "under", "line": 46.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1307,
+      "stake": 10.00,
+      "payout": 140.70,
+      "note": "Parlay header scrolled off; 6 legs inferred from the 6 listed straights, whose combined odds reproduce the $140.70 payout exactly.",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Cincinnati Bengals", "home": "Pittsburgh Steelers", "market": "spread", "selection": "Cincinnati Bengals", "line": -2.5},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "New York Jets", "home": "Detroit Lions", "market": "spread", "selection": "Detroit Lions", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "spread", "selection": "San Francisco 49ers", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Oklahoma", "home": "Georgia", "market": "total", "selection": "under", "line": 45.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Iowa", "home": "Michigan", "market": "total", "selection": "under", "line": 41.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "South Carolina", "home": "Alabama", "market": "spread", "selection": "Alabama", "line": -9.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 709,
+      "stake": 10.00,
+      "payout": 80.91,
+      "note": "UNVERIFIED LEGS: parlay header scrolled off and the 4 listed straights' odds multiply to ~$70.84, not the slip's $80.91 -- likely because Under 45.5 and Georgia -9.5 are the same game and were priced as a same-game combo. Legs assumed to be the 4 listed straights; confirm with Billy.",
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Oklahoma", "home": "Georgia", "market": "total", "selection": "under", "line": 45.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Oklahoma", "home": "Georgia", "market": "spread", "selection": "Georgia", "line": -9.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Iowa", "home": "Michigan", "market": "total", "selection": "under", "line": 41.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "South Carolina", "home": "Alabama", "market": "spread", "selection": "Alabama", "line": -9.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 933,
+      "stake": 5.00,
+      "payout": 51.68,
+      "legs": [
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Missouri", "home": "Mississippi State", "market": "spread", "selection": "Mississippi State", "line": -6.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Kansas State", "home": "Cincinnati", "market": "spread", "selection": "Cincinnati", "line": 7},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "New York Jets", "home": "Detroit Lions", "market": "spread", "selection": "Detroit Lions", "line": -4},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "spread", "selection": "Buffalo Bills", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "spread", "selection": "San Francisco 49ers", "line": -3}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1740,
+      "stake": 5.00,
+      "payout": 92.03,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "spread", "selection": "Buffalo Bills", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "spread", "selection": "San Francisco 49ers", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Boise State", "home": "Western Michigan", "market": "moneyline", "selection": "Western Michigan"},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Kansas State", "home": "Cincinnati", "market": "moneyline", "selection": "Cincinnati"}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 852,
+      "stake": 5.00,
+      "payout": 47.63,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "spread", "selection": "Buffalo Bills", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "spread", "selection": "San Francisco 49ers", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Texas", "home": "Tennessee", "market": "moneyline", "selection": "Tennessee"},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Texas A&M", "home": "LSU", "market": "spread", "period": "1h", "selection": "LSU", "line": -5.5}
+      ]
+    },
+    {
+      "type": "straight",
+      "odds": 625,
+      "stake": 5.00,
+      "payout": 36.25,
+      "note": "Placed live (in-game line).",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "moneyline", "selection": "Arizona Cardinals"}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 400,
+      "stake": 10.00,
+      "payout": 50.00,
+      "note": "Same-game parlay (SGP), placed live; odds had just moved ('Accept & Place Bet').",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Baltimore Ravens", "home": "Dallas Cowboys", "market": "total", "selection": "under", "line": 55.5},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Baltimore Ravens", "home": "Dallas Cowboys", "market": "moneyline", "selection": "Baltimore Ravens"}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 489,
+      "stake": 10.00,
+      "payout": 58.91,
+      "note": "Raiders/Saints leg placed live; odds had just moved ('Accept & Place Bet').",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Las Vegas Raiders", "home": "New Orleans Saints", "market": "total", "selection": "under", "line": 44.5},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Rams", "home": "Denver Broncos", "market": "total", "selection": "under", "line": 44.5},
+        {"sport": "nfl", "event_date": "2026-09-28", "away": "Philadelphia Eagles", "home": "Chicago Bears", "market": "total", "selection": "under", "line": 41.5}
+      ]
+    },
+    {
+      "type": "straight",
+      "odds": 275,
+      "stake": 30.00,
+      "payout": 112.50,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "moneyline", "selection": "Los Angeles Chargers"}
+      ]
+    },
+    {
+      "type": "straight",
+      "odds": 250,
+      "stake": 20.00,
+      "payout": 70.00,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "New York Jets", "home": "Detroit Lions", "market": "moneyline", "selection": "New York Jets"}
+      ]
+    },
+    {
+      "type": "straight",
+      "odds": 160,
+      "stake": 30.00,
+      "payout": 78.00,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Cincinnati Bengals", "home": "Pittsburgh Steelers", "market": "moneyline", "selection": "Pittsburgh Steelers"}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 751,
+      "stake": 10.00,
+      "payout": 85.19,
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Baltimore Ravens", "home": "Dallas Cowboys", "market": "moneyline", "selection": "Dallas Cowboys"},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Houston Texans", "home": "Indianapolis Colts", "market": "spread", "selection": "Indianapolis Colts", "line": 1.5},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "New England Patriots", "home": "Jacksonville Jaguars", "market": "spread", "selection": "Jacksonville Jaguars", "line": -2.5}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 903,
+      "stake": 10.00,
+      "payout": 100.33,
+      "note": "Parlay header scrolled off; 4 legs inferred from the 4 listed straights, whose combined odds reproduce the $100.33 payout exactly.",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Houston Texans", "home": "Indianapolis Colts", "market": "spread", "selection": "Indianapolis Colts", "line": 1.5},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "New England Patriots", "home": "Jacksonville Jaguars", "market": "spread", "selection": "Jacksonville Jaguars", "line": -2.5},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Kansas City Chiefs", "home": "Miami Dolphins", "market": "player_prop", "selection": "Patrick Mahomes 2+ passing TDs", "player": "Patrick Mahomes", "stat": "pass_tds", "threshold": 2, "comparison": "gte"},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Cincinnati Bengals", "home": "Pittsburgh Steelers", "market": "player_prop", "selection": "Joe Burrow over 1.5 passing TDs", "player": "Joe Burrow", "stat": "pass_tds", "threshold": 1.5, "comparison": "gt"}
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 581,
+      "stake": 5.00,
+      "payout": 34.07,
+      "note": "Minnesota leg's matchup was cut off in the screenshot; identified from the schedule as Minnesota @ Washington (the only Minnesota game that weekend). Georgia Tech leg placed live; odds had just moved ('Accept & Place Bet').",
+      "legs": [
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Los Angeles Chargers", "home": "Buffalo Bills", "market": "spread", "selection": "Buffalo Bills", "line": -3},
+        {"sport": "nfl", "event_date": "2026-09-27", "away": "Arizona Cardinals", "home": "San Francisco 49ers", "market": "spread", "selection": "San Francisco 49ers", "line": -3},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Georgia Tech", "home": "Stanford", "market": "spread", "selection": "Georgia Tech", "line": -6.5},
+        {"sport": "cfb", "event_date": "2026-09-26", "away": "Minnesota", "home": "Washington", "market": "spread", "selection": "Minnesota", "line": -2.5}
+      ]
+    }
+  ]
+}
