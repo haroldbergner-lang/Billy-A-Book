@@ -287,8 +287,9 @@ function fmtLine(leg){
   if (market === "winning_margin") return selection + " by " + margin_low + "-" + margin_high;
   return selection + " " + (line > 0 ? "+" + line : line);
 }
+const PERIOD_LABELS = { "1h": "1st half ", "1q": "1st quarter ", "1i": "1st inning ", "f5": "First 5 innings " };
 function periodLabel(period){
-  return period === "1h" ? "1st half " : "";
+  return PERIOD_LABELS[period] || "";
 }
 function fmtDate(label){
   const d = new Date(label + "T12:00:00Z");

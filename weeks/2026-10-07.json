@@ -1,0 +1,1096 @@
+{
+  "week_label": "2026-10-07",
+  "bets": [
+    {
+      "type": "parlay",
+      "odds": 1353,
+      "stake": 10.0,
+      "payout": 145.26,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Vanderbilt",
+          "home": "Georgia",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Georgia",
+          "line": -13.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Ohio State",
+          "home": "Iowa",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Ohio State",
+          "line": -5.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Miami",
+          "home": "Clemson",
+          "market": "total",
+          "selection": "under",
+          "line": 48.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "Atlanta Braves",
+          "home": "Los Angeles Dodgers",
+          "market": "total",
+          "period": "f5",
+          "selection": "under",
+          "line": 4.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1241,
+      "stake": 10.0,
+      "payout": 134.05,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Vanderbilt",
+          "home": "Georgia",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Georgia",
+          "line": -13.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Ohio State",
+          "home": "Iowa",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Ohio State",
+          "line": -5.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Miami",
+          "home": "Clemson",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Miami",
+          "line": -6.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Purdue",
+          "home": "Illinois",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Illinois",
+          "line": -5.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "Atlanta Braves",
+          "home": "Los Angeles Dodgers",
+          "market": "total",
+          "selection": "under",
+          "line": 8.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 703,
+      "stake": 5.0,
+      "payout": 40.17,
+      "note": "INCOMPLETE: slip says 4 legs but the 4th straight is cut off at the bottom of the screenshot (priced about -118 by the payout math). Only the 3 visible legs are recorded; the bet lost on the Bills leg regardless. Red Sox/Yankees game is Wild Card G1 (9/29) or G2 (9/30) -- this leg won either way.",
+      "legs": [
+        {
+          "sport": "mlb",
+          "event_date": "2026-09-29",
+          "away": "Boston Red Sox",
+          "home": "New York Yankees",
+          "market": "total",
+          "period": "f5",
+          "selection": "under",
+          "line": 3.5
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-01",
+          "away": "Pittsburgh Steelers",
+          "home": "Cleveland Browns",
+          "market": "spread",
+          "selection": "Cleveland Browns",
+          "line": 3
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "New England Patriots",
+          "home": "Buffalo Bills",
+          "market": "moneyline",
+          "selection": "Buffalo Bills"
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1313,
+      "stake": 10.0,
+      "payout": 141.39,
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Auburn",
+          "home": "Tennessee",
+          "market": "spread",
+          "selection": "Auburn",
+          "line": 7
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Miami",
+          "home": "Clemson",
+          "market": "spread",
+          "selection": "Miami",
+          "line": -17
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Kentucky",
+          "home": "South Carolina",
+          "market": "spread",
+          "selection": "Kentucky",
+          "line": 2.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Indiana",
+          "home": "Rutgers",
+          "market": "spread",
+          "selection": "Rutgers",
+          "line": 24
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 834,
+      "stake": 10.0,
+      "payout": 93.4,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout. Payout is ~0.7% under the straight product because two legs are the same game (Eagles/Bears), which the book reprices. Built before MNF 9/28, so the Red Sox/Yankees leg is Wild Card G1 (9/29).",
+      "legs": [
+        {
+          "sport": "nfl",
+          "event_date": "2026-09-28",
+          "away": "Philadelphia Eagles",
+          "home": "Chicago Bears",
+          "market": "total",
+          "selection": "under",
+          "line": 41.5
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-09-28",
+          "away": "Philadelphia Eagles",
+          "home": "Chicago Bears",
+          "market": "spread",
+          "selection": "Philadelphia Eagles",
+          "line": -3
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "Denver Broncos",
+          "home": "San Francisco 49ers",
+          "market": "spread",
+          "selection": "San Francisco 49ers",
+          "line": -2.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-09-29",
+          "away": "Boston Red Sox",
+          "home": "New York Yankees",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 995,
+      "stake": 5.0,
+      "payout": 54.75,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly. Red Sox/Yankees game is Wild Card G1 (9/29) or G2 (9/30) -- no 1st-inning run in either, so this leg won either way.",
+      "legs": [
+        {
+          "sport": "mlb",
+          "event_date": "2026-09-29",
+          "away": "Boston Red Sox",
+          "home": "New York Yankees",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-02",
+          "away": "Penn State",
+          "home": "Northwestern",
+          "market": "spread",
+          "selection": "Northwestern",
+          "line": 3
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Kentucky",
+          "home": "South Carolina",
+          "market": "spread",
+          "selection": "Kentucky",
+          "line": 3
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Purdue",
+          "home": "Illinois",
+          "market": "spread",
+          "selection": "Illinois",
+          "line": -10
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1056,
+      "stake": 5.0,
+      "payout": 57.82,
+      "note": "DATE UNCONFIRMED: all four legs are Wild Card games and the slip doesn't say whether it was G1 (9/29) or G2 (9/30). Dated 9/30 provisionally (its Red Sox/Yankees price, -155, differs from the -175/-180 seen on G1 slips). On 9/29 games this bet would have WON; on 9/30 it lost (Cubs/Padres scored only 5).",
+      "legs": [
+        {
+          "sport": "mlb",
+          "event_date": "2026-09-30",
+          "away": "Boston Red Sox",
+          "home": "New York Yankees",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-09-30",
+          "away": "Chicago Cubs",
+          "home": "San Diego Padres",
+          "market": "total",
+          "selection": "over",
+          "line": 7.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-09-30",
+          "away": "Philadelphia Phillies",
+          "home": "Atlanta Braves",
+          "market": "total",
+          "selection": "over",
+          "line": 7
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-09-30",
+          "away": "Chicago White Sox",
+          "home": "Houston Astros",
+          "market": "total",
+          "selection": "over",
+          "line": 7.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 2119,
+      "stake": 5.0,
+      "payout": 110.95,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly. Odds had just moved ('Accept & Place Bet').",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-01",
+          "away": "North Texas",
+          "home": "Tulsa",
+          "market": "spread",
+          "selection": "North Texas",
+          "line": -2.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Michigan State",
+          "home": "Wisconsin",
+          "market": "spread",
+          "selection": "Wisconsin",
+          "line": -9.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "BYU",
+          "home": "TCU",
+          "market": "spread",
+          "selection": "BYU",
+          "line": -6
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "Denver Broncos",
+          "home": "San Francisco 49ers",
+          "market": "spread",
+          "selection": "San Francisco 49ers",
+          "line": -2.5
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "New England Patriots",
+          "home": "Buffalo Bills",
+          "market": "spread",
+          "selection": "Buffalo Bills",
+          "line": -6.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 3077,
+      "stake": 5.0,
+      "payout": 158.86,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-02",
+          "away": "Pittsburgh",
+          "home": "Virginia Tech",
+          "market": "spread",
+          "selection": "Virginia Tech",
+          "line": -2
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Alabama",
+          "home": "Mississippi State",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Mississippi State",
+          "line": 3.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Ohio State",
+          "home": "Iowa",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Ohio State",
+          "line": -6.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Louisville",
+          "home": "NC State",
+          "market": "spread",
+          "selection": "Louisville",
+          "line": -3
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Maryland",
+          "home": "Nebraska",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Nebraska",
+          "line": -6.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Indiana",
+          "home": "Rutgers",
+          "market": "spread",
+          "selection": "Rutgers",
+          "line": 24.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1179,
+      "stake": 5.0,
+      "payout": 63.94,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly. Pittsburgh leg placed live.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-02",
+          "away": "Pittsburgh",
+          "home": "Virginia Tech",
+          "market": "spread",
+          "selection": "Pittsburgh",
+          "line": 7.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-02",
+          "away": "Penn State",
+          "home": "Northwestern",
+          "market": "total",
+          "selection": "under",
+          "line": 47.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Arkansas",
+          "home": "Texas A&M",
+          "market": "spread",
+          "selection": "Arkansas",
+          "line": 14
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "UTSA",
+          "home": "Rice",
+          "market": "spread",
+          "selection": "UTSA",
+          "line": -12
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 825,
+      "stake": 5.0,
+      "payout": 46.23,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly. Penn State leg placed live; odds had just moved ('Accept & Place Bet').",
+      "legs": [
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "Atlanta Braves",
+          "home": "Los Angeles Dodgers",
+          "market": "total",
+          "period": "f5",
+          "selection": "under",
+          "line": 4.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-02",
+          "away": "Penn State",
+          "home": "Northwestern",
+          "market": "spread",
+          "selection": "Penn State",
+          "line": 7.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Vanderbilt",
+          "home": "Georgia",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Georgia",
+          "line": -13.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1308,
+      "stake": 5.0,
+      "payout": 70.41,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Vanderbilt",
+          "home": "Georgia",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Georgia",
+          "line": -13.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Auburn",
+          "home": "Tennessee",
+          "market": "moneyline",
+          "selection": "Auburn"
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Ohio State",
+          "home": "Iowa",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Ohio State",
+          "line": -5.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Purdue",
+          "home": "Illinois",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Illinois",
+          "line": -5.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1269,
+      "stake": 10.0,
+      "payout": 136.86,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Ohio State",
+          "home": "Iowa",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Ohio State",
+          "line": -5.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Maryland",
+          "home": "Nebraska",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Nebraska",
+          "line": -6.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "Atlanta Braves",
+          "home": "Los Angeles Dodgers",
+          "market": "total",
+          "period": "f5",
+          "selection": "under",
+          "line": 4.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Purdue",
+          "home": "Illinois",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Illinois",
+          "line": -5.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 731,
+      "stake": 15.0,
+      "payout": 124.61,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly. Odds had just moved ('Accept & Place Bet').",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Ohio State",
+          "home": "Iowa",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Ohio State",
+          "line": -5.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Miami",
+          "home": "Clemson",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Miami",
+          "line": -6.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Washington",
+          "home": "USC",
+          "market": "spread",
+          "period": "1h",
+          "selection": "USC",
+          "line": -2.5
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "New England Patriots",
+          "home": "Buffalo Bills",
+          "market": "moneyline",
+          "selection": "Buffalo Bills"
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 678,
+      "stake": 10.0,
+      "payout": 77.79,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly.",
+      "legs": [
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "New England Patriots",
+          "home": "Buffalo Bills",
+          "market": "moneyline",
+          "selection": "Buffalo Bills"
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Utah State",
+          "home": "Boise State",
+          "market": "spread",
+          "selection": "Boise State",
+          "line": -19
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Indiana",
+          "home": "Rutgers",
+          "market": "spread",
+          "selection": "Rutgers",
+          "line": 24.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1098,
+      "stake": 5.0,
+      "payout": 59.94,
+      "legs": [
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "New England Patriots",
+          "home": "Buffalo Bills",
+          "market": "moneyline",
+          "selection": "Buffalo Bills"
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-03",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Texas Tech",
+          "home": "Colorado",
+          "market": "moneyline",
+          "selection": "Colorado"
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 519,
+      "stake": 5.0,
+      "payout": 30.96,
+      "note": "Boise State leg placed live.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Baylor",
+          "home": "Arizona State",
+          "market": "spread",
+          "selection": "Arizona State",
+          "line": -3
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Texas State",
+          "home": "San Diego State",
+          "market": "spread",
+          "selection": "Texas State",
+          "line": -9
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Utah State",
+          "home": "Boise State",
+          "market": "spread",
+          "selection": "Boise State",
+          "line": -26.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 935,
+      "stake": 10.0,
+      "payout": 103.51,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout exactly.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Vanderbilt",
+          "home": "Georgia",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Georgia",
+          "line": -13.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Ohio State",
+          "home": "Iowa",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Ohio State",
+          "line": -5.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Alabama",
+          "home": "Mississippi State",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Mississippi State",
+          "line": 4.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Maryland",
+          "home": "Nebraska",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Nebraska",
+          "line": -6.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Miami",
+          "home": "Clemson",
+          "market": "spread",
+          "period": "1h",
+          "selection": "Miami",
+          "line": -6.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 846,
+      "stake": 5.0,
+      "payout": 47.32,
+      "note": "Parlay header scrolled off; legs are the listed straights, whose combined odds reproduce the slip's payout. Payout is ~3% under the straight product because two legs are the same game (Chiefs/Raiders), which the book reprices.",
+      "legs": [
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "Kansas City Chiefs",
+          "home": "Las Vegas Raiders",
+          "market": "spread",
+          "selection": "Las Vegas Raiders",
+          "line": 4.5
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "Kansas City Chiefs",
+          "home": "Las Vegas Raiders",
+          "market": "total",
+          "selection": "over",
+          "line": 45
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Texas Tech",
+          "home": "Colorado",
+          "market": "spread",
+          "selection": "Colorado",
+          "line": 14
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Oregon State",
+          "home": "Colorado State",
+          "market": "total",
+          "selection": "over",
+          "line": 59.5
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1045,
+      "stake": 5.0,
+      "payout": 57.28,
+      "note": "James Madison's opponent was cut off; identified from the schedule as Marshall @ James Madison (JMU's only game that weekend). Leg odds reproduce the payout exactly.",
+      "legs": [
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Oregon State",
+          "home": "Colorado State",
+          "market": "total",
+          "selection": "over",
+          "line": 59.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "California",
+          "home": "UNLV",
+          "market": "spread",
+          "selection": "California",
+          "line": 1
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Louisville",
+          "home": "NC State",
+          "market": "spread",
+          "selection": "Louisville",
+          "line": -3
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-03",
+          "away": "Marshall",
+          "home": "James Madison",
+          "market": "spread",
+          "selection": "James Madison",
+          "line": -16
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 841,
+      "stake": 10.0,
+      "payout": 94.06,
+      "note": "Top of slip cut off; 5 visible legs recorded. Payout is ~26% under the straight product -- two same-game pairs (Lions/Panthers; Yankees/Rays) repriced by the book -- so an extra leg above can't be ruled out. Lost on Lions -3 regardless. Yankees/Rays dated 10/5 and Braves/Dodgers 10/4: no live markers on a slip that still had Sunday's Lions game open means it was built 10/4 morning (or before 10/3's first pitch -- the Braves/Dodgers leg wins on either date). Odds had just moved.",
+      "legs": [
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "Detroit Lions",
+          "home": "Carolina Panthers",
+          "market": "spread",
+          "selection": "Detroit Lions",
+          "line": -3
+        },
+        {
+          "sport": "nfl",
+          "event_date": "2026-10-04",
+          "away": "Detroit Lions",
+          "home": "Carolina Panthers",
+          "market": "player_prop",
+          "selection": "Jared Goff 2+ passing TDs",
+          "player": "Jared Goff",
+          "stat": "pass_tds",
+          "threshold": 2,
+          "comparison": "gte"
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-05",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-05",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "f5",
+          "selection": "under",
+          "line": 4
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-04",
+          "away": "Atlanta Braves",
+          "home": "Los Angeles Dodgers",
+          "market": "total",
+          "period": "f5",
+          "selection": "under",
+          "line": 4
+        }
+      ]
+    },
+    {
+      "type": "parlay",
+      "odds": 1056,
+      "stake": 5.0,
+      "payout": 57.78,
+      "note": "Top of slip cut off; 5 visible legs recorded (payout is under the straight product because of the Yankees/Rays same-game pair, so an extra leg above can't be ruled out). Georgia @ Alabama and UCLA @ Oregon are 10/10. DATE UNCONFIRMED for the Yankees/Rays legs: provisionally the 10/10 game; if it was the 10/5 game this bet already lost (a run scored in the 1st).",
+      "legs": [
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-10",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-10",
+          "away": "New York Yankees",
+          "home": "Tampa Bay Rays",
+          "market": "total",
+          "period": "f5",
+          "selection": "under",
+          "line": 4
+        },
+        {
+          "sport": "mlb",
+          "event_date": "2026-10-06",
+          "away": "Los Angeles Dodgers",
+          "home": "Atlanta Braves",
+          "market": "total",
+          "period": "1i",
+          "selection": "under",
+          "line": 0.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-10",
+          "away": "UCLA",
+          "home": "Oregon",
+          "market": "spread",
+          "selection": "UCLA",
+          "line": 11.5
+        },
+        {
+          "sport": "cfb",
+          "event_date": "2026-10-10",
+          "away": "Georgia",
+          "home": "Alabama",
+          "market": "spread",
+          "selection": "Alabama",
+          "line": -1.5
+        }
+      ]
+    }
+  ]
+}
