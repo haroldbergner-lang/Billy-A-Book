@@ -1040,11 +1040,11 @@
       "odds": 1056,
       "stake": 5.0,
       "payout": 57.78,
-      "note": "Top of slip cut off; 5 visible legs recorded (payout is under the straight product because of the Yankees/Rays same-game pair, so an extra leg above can't be ruled out). Georgia @ Alabama and UCLA @ Oregon are 10/10. DATE UNCONFIRMED for the Yankees/Rays legs: provisionally the 10/10 game; if it was the 10/5 game this bet already lost (a run scored in the 1st).",
+      "note": "Top of slip cut off; 5 visible legs recorded (payout is under the straight product because of the Yankees/Rays same-game pair, so an extra leg above can't be ruled out). Yankees/Rays legs are ALDS Game 2 on 10/5 (confirmed). Georgia @ Alabama and UCLA @ Oregon are 10/10, but the bet already lost on the Yankees/Rays legs (a run scored in the 1st).",
       "legs": [
         {
           "sport": "mlb",
-          "event_date": "2026-10-10",
+          "event_date": "2026-10-05",
           "away": "New York Yankees",
           "home": "Tampa Bay Rays",
           "market": "total",
@@ -1054,7 +1054,7 @@
         },
         {
           "sport": "mlb",
-          "event_date": "2026-10-10",
+          "event_date": "2026-10-05",
           "away": "New York Yankees",
           "home": "Tampa Bay Rays",
           "market": "total",
