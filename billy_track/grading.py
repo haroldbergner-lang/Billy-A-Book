@@ -170,15 +170,22 @@ def grade_player_prop(leg, event_id):
 
 
 def _period_score(side, period):
-    """side: {'score': int|None, 'by_period': {1: x, 2: y, ...}}. period: 'full' | '1h' | '1q'."""
+    """side: {'score': int|None, 'by_period': {1: x, 2: y, ...}}.
+    period: 'full' | '1h' | '1q' (football) | '1i' | 'f5' (baseball: 1st inning,
+    first 5 innings). A "no run in the 1st inning" bet is a 1i total, under 0.5."""
     if period == "full":
         return side["score"]
-    if period == "1q":
+    if period in ("1q", "1i"):
         return side["by_period"].get(1)
     if period == "1h":
         if not side["by_period"]:
             return None
         return side["by_period"].get(1, 0) + side["by_period"].get(2, 0)
+    if period == "f5":
+        # All five innings must be on the board -- a game called early has no F5 result.
+        if any(i not in side["by_period"] for i in range(1, 6)):
+            return None
+        return sum(side["by_period"][i] for i in range(1, 6))
     raise ValueError(f"Unknown period: {period!r}")
 
 
