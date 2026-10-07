@@ -294,7 +294,7 @@
       "odds": 1056,
       "stake": 5.0,
       "payout": 57.82,
-      "note": "DATE UNCONFIRMED: all four legs are Wild Card games and the slip doesn't say whether it was G1 (9/29) or G2 (9/30). Dated 9/30 provisionally (its Red Sox/Yankees price, -155, differs from the -175/-180 seen on G1 slips). On 9/29 games this bet would have WON; on 9/30 it lost (Cubs/Padres scored only 5).",
+      "note": "Wild Card Game 2 (9/30), confirmed: slip was sent Wednesday 9/30 at 2:01 PM. Lost on Cubs/Padres over 7.5 (5 runs).",
       "legs": [
         {
           "sport": "mlb",
