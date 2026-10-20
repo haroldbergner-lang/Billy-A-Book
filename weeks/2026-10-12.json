@@ -129,14 +129,14 @@
           "selection": "over",
           "line": 53.5,
           "odds": -130,
-          "result": "pending",
-          "away_score": null,
-          "home_score": null,
+          "result": "won",
+          "away_score": 37,
+          "home_score": 34,
           "score_source": "https://www.espn.com/nfl/game/_/gameId/401872994"
         }
       ],
       "result": "lost",
-      "graded_on": "2026-10-12"
+      "graded_on": "2026-10-20"
     },
     {
       "type": "parlay",
