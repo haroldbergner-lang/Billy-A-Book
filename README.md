@@ -138,3 +138,10 @@ columns: `rush_yds`, `rec_yds`, `rush_rec_yds` (rushing + receiving yards),
 TDs). For a prop shape that doesn't fit one of those (a different stat, an
 "either/or" combo, etc.), skip `stat`/`threshold`/`comparison` and set
 `manual_result` directly after checking the box score by hand.
+
+## Team totals
+
+For a single team's total points, use `market: "team_total"`, set `selection` to the exact `away` or `home` team name, `line` to the points line, and `comparison` to `"gt"` (over) or `"lt"` (under). `period` works as for other markets. Only the selected team's score counts; equality is a push. For example, Pittsburgh over 13.5 against Miami uses `selection: "Pittsburgh"`, `line: 13.5`, `comparison: "gt"`.
+
+Validation: `python -m unittest discover -s tests -v`.
+

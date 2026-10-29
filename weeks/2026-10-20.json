@@ -813,15 +813,15 @@
           "market": "spread",
           "selection": "South Carolina",
           "line": -1,
-          "result": "pending",
-          "away_score": null,
-          "home_score": null,
+          "result": "won",
+          "away_score": 24,
+          "home_score": 27,
           "score_source": "https://www.espn.com/college-football/game/_/gameId/401856731",
           "espn_event_id": "401856731"
         }
       ],
       "result": "lost",
-      "graded_on": "2026-10-20"
+      "graded_on": "2026-10-28"
     },
     {
       "type": "parlay",
@@ -1420,9 +1420,9 @@
           "market": "spread",
           "selection": "South Carolina",
           "line": -2.5,
-          "result": "pending",
-          "away_score": null,
-          "home_score": null,
+          "result": "won",
+          "away_score": 24,
+          "home_score": 27,
           "score_source": "https://www.espn.com/college-football/game/_/gameId/401856731",
           "espn_event_id": "401856731"
         },
@@ -1434,15 +1434,15 @@
           "market": "spread",
           "selection": "Clemson",
           "line": -3,
-          "result": "pending",
-          "away_score": null,
-          "home_score": null,
+          "result": "lost",
+          "away_score": 20,
+          "home_score": 16,
           "score_source": "https://www.espn.com/college-football/game/_/gameId/401858276",
           "espn_event_id": "401858276"
         }
       ],
       "result": "lost",
-      "graded_on": "2026-10-20"
+      "graded_on": "2026-10-28"
     }
   ]
 }

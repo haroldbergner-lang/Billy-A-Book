@@ -264,6 +264,14 @@ def grade_leg(leg):
         else:
             result = "won" if (sel == "over") == (total > leg["line"]) else "lost"
 
+    elif market == "team_total":
+        # selection identifies the team; comparison is gt (over) or lt (under).
+        side = _selection_side(leg)
+        value = away_score if side == "away" else home_score
+        if leg["comparison"] not in ("gt", "lt"):
+            raise ValueError("Team total comparison must be 'gt' or 'lt'")
+        result = _compare_prop(value, leg["comparison"], leg["line"])
+
     elif market == "winning_margin":
         # e.g. "Pittsburgh by 1-6": the picked team must win by a margin inside
         # [margin_low, margin_high] (final score, OT included). Any other outcome
@@ -294,3 +302,4 @@ def grade_bet(leg_rows):
     if all(s == "push" for s in statuses):
         return "push"
     return "won"
+

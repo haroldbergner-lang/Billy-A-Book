@@ -269,7 +269,7 @@ footer p{ margin:0 0 4px; }
 </div>
 
 <script>
-const MARKET_LABELS = { moneyline: "Moneyline", spread: "Spread", total: "Total", winning_margin: "Winning Margin" };
+const MARKET_LABELS = { moneyline: "Moneyline", spread: "Spread", total: "Total", team_total: "Team Total", winning_margin: "Winning Margin" };
 const RESULT_LABEL = { won: "Won", lost: "Lost", push: "Push", pending: "Pending", unknown: "Unknown" };
 
 function fmtMoney(n){
@@ -284,6 +284,7 @@ function fmtLine(leg){
   const { market, selection, line, margin_low, margin_high } = leg;
   if (market === "moneyline") return selection;
   if (market === "total") return (selection === "over" ? "Over" : "Under") + " " + line;
+  if (market === "team_total") return selection + " " + (leg.comparison === "gt" ? "Over" : "Under") + " " + line;
   if (market === "winning_margin") return selection + " by " + margin_low + "-" + margin_high;
   return selection + " " + (line > 0 ? "+" + line : line);
 }
@@ -376,7 +377,9 @@ function renderWeeks(weeks){
       const betEl = document.createElement("div");
       betEl.className = "bet";
       const legsSummary = bet.type === "parlay"
-        ? `${bet.legs.length}-leg parlay`
+        ? (bet.expected_leg_count && bet.expected_leg_count !== bet.legs.length
+          ? `${bet.expected_leg_count}-leg parlay (${bet.legs.length} recorded)`
+          : `${bet.legs.length}-leg parlay`)
         : fmtLine(bet.legs[0]);
       betEl.innerHTML = `
         <div class="bet-head">
@@ -394,6 +397,12 @@ function renderWeeks(weeks){
         <div class="legs"></div>
       `;
       const legsEl = betEl.querySelector(".legs");
+      if (bet.note) {
+        const noteEl = document.createElement("div");
+        noteEl.className = "muted";
+        noteEl.textContent = bet.note;
+        betEl.insertBefore(noteEl, legsEl);
+      }
       bet.legs.forEach(leg => {
         const legEl = document.createElement("div");
         legEl.className = "leg-row";
@@ -498,3 +507,4 @@ async function init(){
 
 init();
 </script>
+
